@@ -12,22 +12,20 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'		" Simple status line
 Plugin 'scrooloose/nerdtree'		" Directory tree view
 Plugin 'Xuyuanp/nerdtree-git-plugin'	" Show git status in nerdtree
-Plugin 'shougo/neocomplete.vim'		" Autocomplete
-Plugin 'Shougo/neosnippet'		" Snippet support, works with vim-go
-Plugin 'Shougo/neosnippet-snippets'	" Default snippets for neosnippet
+Plugin 'valloric/youcompleteme'		" Autocomplete
 Plugin 'easymotion/vim-easymotion'	" Makes moving aroung easier
 Plugin 'scrooloose/nerdcommenter'	" Code comment
 Plugin 'kien/ctrlp.vim'			" File and buffer searching
 Plugin 'tpope/vim-fugitive'		" Git intergration
 Plugin 'scrooloose/syntastic'		" Syntax check
-Plugin 'tpope/vim-surround'		" 
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-surround'		" Edit surrounds with ease 
+Plugin 'fholgado/minibufexpl.vim'	" Buffer explorer
+Plugin 'majutsushi/tagbar'		" Tagbar to show code structure
+Plugin 'jiangmiao/auto-pairs'		" Auto pairs parenthesis
 Plugin 'editorconfig/editorconfig-vim'	" Editorconfig
 Plugin 'christoomey/vim-tmux-navigator'	" Tmux intergration
 Plugin 'tpope/vim-obsession'		" Save vim session
-Plugin 'nathanaelkane/vim-indent-guides'" Indent guide
+Plugin 'nathanaelkane/vim-indent-guides'	" Indent guide
 Plugin 'terryma/vim-multiple-cursors'	" Multicursor editing
 
 Plugin 'fatih/vim-go'
@@ -37,7 +35,7 @@ Plugin 'JavaScript-Indent'
 Plugin 'mxw/vim-jsx'
 Plugin 'marijnh/tern_for_vim'
 
-Plugin 'klen/python-mode'
+" Plugin 'klen/python-mode'
 
 
 call vundle#end()
@@ -143,13 +141,11 @@ so $HOME/.vim/config/tmux.vim
 so $HOME/.vim/config/obsession.vim
 so $HOME/.vim/config/ctrlp.vim
 so $HOME/.vim/config/tagbar.vim
-so $HOME/.vim/config/neocomplete.vim
 so $HOME/.vim/config/nerdcommenter.vim
 so $HOME/.vim/config/nerdtree.vim
 so $HOME/.vim/config/js.vim
-so $HOME/.vim/config/python.vim
+" so $HOME/.vim/config/python.vim
 so $HOME/.vim/config/go.vim
-so $HOME/.vim/config/neosnippet.vim
 so $HOME/.vim/config/minibuffer.vim
 
 
