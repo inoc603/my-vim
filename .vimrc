@@ -27,6 +27,7 @@ Plugin 'christoomey/vim-tmux-navigator'	" Tmux intergration
 Plugin 'tpope/vim-obsession'		" Save vim session
 Plugin 'nathanaelkane/vim-indent-guides'	" Indent guide
 Plugin 'terryma/vim-multiple-cursors'	" Multicursor editing
+Plugin 'airblade/vim-gitgutter'		" Show git diff 
 
 Plugin 'fatih/vim-go'
 
@@ -35,6 +36,7 @@ Plugin 'JavaScript-Indent'
 Plugin 'mxw/vim-jsx'
 Plugin 'marijnh/tern_for_vim'
 
+Plugin 'davidhalter/jedi-vim'
 " Plugin 'klen/python-mode'
 
 
@@ -144,9 +146,9 @@ so $HOME/.vim/config/tagbar.vim
 so $HOME/.vim/config/nerdcommenter.vim
 so $HOME/.vim/config/nerdtree.vim
 so $HOME/.vim/config/js.vim
-" so $HOME/.vim/config/python.vim
+so $HOME/.vim/config/python.vim
 so $HOME/.vim/config/go.vim
 so $HOME/.vim/config/minibuffer.vim
-
+so $HOME/.vim/config/jedi.vim
 
 
