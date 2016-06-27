@@ -8,3 +8,4 @@ npm i
 # Compile YouCompleteMe with golang and js support
 cd ../youcompleteme
 ./install.py --gocode-completer --tern-completer
+

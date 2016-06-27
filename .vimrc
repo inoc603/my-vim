@@ -32,7 +32,6 @@ Plugin 'airblade/vim-gitgutter'		" Show git diff
 Plugin 'fatih/vim-go'
 
 Plugin 'pangloss/vim-javascript'
-Plugin 'JavaScript-Indent'
 Plugin 'mxw/vim-jsx'
 Plugin 'marijnh/tern_for_vim'
 
