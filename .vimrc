@@ -34,6 +34,7 @@ Plugin 'fatih/vim-go'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
 
 Plugin 'davidhalter/jedi-vim'
 " Plugin 'klen/python-mode'
@@ -139,6 +140,7 @@ vnoremap <leader>k :m '<-2<CR>gv=gv
 " Sourcing custom config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 so $HOME/.vim/config/tmux.vim
+so $HOME/.vim/config/syntastic.vim
 so $HOME/.vim/config/obsession.vim
 so $HOME/.vim/config/ctrlp.vim
 so $HOME/.vim/config/tagbar.vim
