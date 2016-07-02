@@ -116,6 +116,7 @@ set noswapfile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap j gj
 nnoremap k gk
+" Use Ctrl-j,k,h,l to move between tabs
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
@@ -124,17 +125,27 @@ set whichwrap+=<,>,h,l
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Copy and Paste
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use Ctrl-c and Ctrl-v to copy and paste to system clipboard
+vmap <C-c> "*yy
+nmap <C-v> "*p
+imap <C-v> <Esc><C-v>a
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Manually map Alt-j and Alt-k to work in Iterm2
-map j <leader>j
-map k <leader>k
 " Move line(s) up and down
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 vnoremap <leader>j :m '>+1<CR>gv=gv
 vnoremap <leader>k :m '<-2<CR>gv=gv
-
+map <A-j> <leader>j
+map <A-k> <leader>k
+" Special mapping for iTerm2 on mac
+map ∆ <leader>j
+map ˚ <leader>k
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sourcing custom config
@@ -151,5 +162,4 @@ so $HOME/.vim/config/python.vim
 so $HOME/.vim/config/go.vim
 so $HOME/.vim/config/minibuffer.vim
 so $HOME/.vim/config/jedi.vim
-
 
