@@ -8,7 +8,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-sensible'
+
+" Some colorschemes 
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+
 Plugin 'bling/vim-airline'		" Simple status line
 Plugin 'scrooloose/nerdtree'		" Directory tree view
 Plugin 'Xuyuanp/nerdtree-git-plugin'	" Show git status in nerdtree
@@ -78,9 +82,7 @@ endif
 " Search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set hlsearch
-nmap <leader><space> :nohlsearch<CR>
-map <space> /
-map <C-space> ?
+map <leader>h :nohlsearch<CR>
 set ignorecase
 set smartcase
 
@@ -88,7 +90,7 @@ set smartcase
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Basic key map
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader=","
+let mapleader=' '
 
 " Disable arrow keys
 noremap <up> <nop>
@@ -143,7 +145,7 @@ vnoremap <leader>j :m '>+1<CR>gv=gv
 vnoremap <leader>k :m '<-2<CR>gv=gv
 map <A-j> <leader>j
 map <A-k> <leader>k
-" Special mapping for iTerm2 on mac
+" Special mapping for Alt to work with iTerm2 on mac
 map ∆ <leader>j
 map ˚ <leader>k
 
