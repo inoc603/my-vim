@@ -33,16 +33,17 @@ Plugin 'nathanaelkane/vim-indent-guides'	" Indent guide
 Plugin 'terryma/vim-multiple-cursors'	" Multicursor editing
 Plugin 'airblade/vim-gitgutter'		" Show git diff 
 
+" Golang
 Plugin 'fatih/vim-go'
 
+" JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'mtscout6/syntastic-local-eslint.vim'
 
+" Python
 Plugin 'davidhalter/jedi-vim'
-" Plugin 'klen/python-mode'
-
 
 call vundle#end()
 filetype plugin indent on
@@ -58,6 +59,7 @@ set number              " show line numbers
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
 set showmatch           " highlight matching [{()}]
+set scrolloff=7		" keep some lines visible when moving cursor
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 if $TERM_PROGRAM =~ "iTerm"
@@ -82,15 +84,20 @@ endif
 " Search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set hlsearch
-map <leader>h :nohlsearch<CR>
 set ignorecase
 set smartcase
+" Cancel highlight when you're done seraching
+map <silent><leader>h :nohlsearch<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Basic key map
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use space as leader key
 let mapleader=' '
+
+" Enter command mode without pressing shift
+noremap ; :
 
 " Disable arrow keys
 noremap <up> <nop>
@@ -106,8 +113,12 @@ inoremap kj <Esc>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files and session
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <leader>w :w<CR>			" ,w to save	
-nmap <leader>s :mksession<CR>		" ,s to save session
+" Quick save
+nmap <leader>w :w<CR>			
+" Quickly close current window
+nmap <leader>q :q<CR>			" 
+" Save session
+nmap <leader>s :mksession<CR>		
 set nobackup
 set nowb
 set noswapfile
@@ -116,14 +127,20 @@ set noswapfile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Movement
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Treat long lines as break lines
 nnoremap j gj
 nnoremap k gk
-" Use Ctrl-j,k,h,l to move between tabs
+set whichwrap+=<,>,h,l
+
+" Use H/L to move to start/end of line
+nnoremap H ^
+nnoremap L $
+
+" Use Ctrl-j,k,h,l to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-set whichwrap+=<,>,h,l
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -148,6 +165,7 @@ map <A-k> <leader>k
 " Special mapping for Alt to work with iTerm2 on mac
 map ∆ <leader>j
 map ˚ <leader>k
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sourcing custom config
