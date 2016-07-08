@@ -32,6 +32,7 @@ Plugin 'tpope/vim-obsession'		" Save vim session
 Plugin 'nathanaelkane/vim-indent-guides'	" Indent guide
 Plugin 'terryma/vim-multiple-cursors'	" Multicursor editing
 Plugin 'airblade/vim-gitgutter'		" Show git diff 
+Plugin 'jszakmeister/vim-togglecursor'	" Change cursor shape
 
 " Golang
 Plugin 'fatih/vim-go'
@@ -62,21 +63,6 @@ set showmatch           " highlight matching [{()}]
 set scrolloff=7		" keep some lines visible when moving cursor
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
-
-" Vertical line cursor in insert mode, block cursor in normal mode
-" Works on iTerm2, and with tmux
-if $TERM_PROGRAM =~ "iTerm"
-	let &t_SI = "\<Esc>]50;CursorShape=1\x7" 
-	let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
