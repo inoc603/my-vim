@@ -33,6 +33,7 @@ Plugin 'nathanaelkane/vim-indent-guides'	" Indent guide
 Plugin 'terryma/vim-multiple-cursors'	" Multicursor editing
 Plugin 'airblade/vim-gitgutter'		" Show git diff 
 Plugin 'jszakmeister/vim-togglecursor'	" Change cursor shape
+Plugin 'mileszs/ack.vim'		" Search in project
 
 " Golang
 Plugin 'fatih/vim-go'
@@ -179,4 +180,5 @@ so $HOME/.vim/config/python.vim
 so $HOME/.vim/config/go.vim
 so $HOME/.vim/config/minibuffer.vim
 so $HOME/.vim/config/jedi.vim
+so $HOME/.vim/config/ack.vim
 
