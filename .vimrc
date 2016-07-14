@@ -131,10 +131,18 @@ nnoremap k gk
 set whichwrap+=<,>,h,l
 
 " Use H/L to move to start/end of line
+" Also remap common combination because H/L are originally used to go to
+" top/bottom of window
 nnoremap H ^
 nnoremap L $
+nnoremap cH c^
+nnoremap cL c$
+nnoremap dH d^
+nnoremap dL d$
 
 " Use Ctrl-j,k,h,l to move between windows
+" With the christoomey/vim-tmux-navigator plugin you can navigate between tmux
+" and vim windows seamlessly
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
@@ -158,9 +166,16 @@ nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 vnoremap <leader>j :m '>+1<CR>gv=gv
 vnoremap <leader>k :m '<-2<CR>gv=gv
+
+" How I want to move lines, though it never works in Iterm2, even you set your
+" alt key to act as meta key
 map <A-j> <leader>j
 map <A-k> <leader>k
-" Special mapping for Alt to work with iTerm2 on mac
+
+" Special mapping for Alt to work with iTerm2 on mac, with default setting
+" If alt key is configured to send +Esc, you can have a mapping with an
+" invisible prefix, but you'll often accidentally move your code when exiting
+" insert mode
 map ∆ <leader>j
 map ˚ <leader>k
 
