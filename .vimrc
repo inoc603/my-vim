@@ -64,6 +64,8 @@ set showmatch           " highlight matching [{()}]
 set scrolloff=7		" keep some lines visible when moving cursor
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+set ttyfast
+set lazyredraw
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
