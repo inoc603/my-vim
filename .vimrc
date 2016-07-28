@@ -141,6 +141,8 @@ nnoremap cH c^
 nnoremap cL c$
 nnoremap dH d^
 nnoremap dL d$
+vnoremap H ^
+vnoremap L $
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
