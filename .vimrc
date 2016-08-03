@@ -34,6 +34,7 @@ Plugin 'terryma/vim-multiple-cursors'	" Multicursor editing
 Plugin 'airblade/vim-gitgutter'		" Show git diff 
 Plugin 'jszakmeister/vim-togglecursor'	" Change cursor shape
 Plugin 'mileszs/ack.vim'		" Search in project
+Plugin 'elzr/vim-json'			" Better JSON syntax
 
 " Golang
 Plugin 'fatih/vim-go'
