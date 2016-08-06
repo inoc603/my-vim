@@ -35,6 +35,9 @@ Plugin 'airblade/vim-gitgutter'		" Show git diff
 Plugin 'jszakmeister/vim-togglecursor'	" Change cursor shape
 Plugin 'mileszs/ack.vim'		" Search in project
 Plugin 'elzr/vim-json'			" Better JSON syntax
+Plugin 'godlygeek/tabular'		
+Plugin 'plasticboy/vim-markdown'	" Markdown support
+
 
 " Golang
 Plugin 'fatih/vim-go'
@@ -208,4 +211,5 @@ so $HOME/.vim/config/go.vim
 so $HOME/.vim/config/minibuffer.vim
 so $HOME/.vim/config/jedi.vim
 so $HOME/.vim/config/ack.vim
+so $HOME/.vim/config/markdown.vim
 
