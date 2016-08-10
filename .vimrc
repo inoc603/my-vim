@@ -212,4 +212,4 @@ so $HOME/.vim/config/minibuffer.vim
 so $HOME/.vim/config/jedi.vim
 so $HOME/.vim/config/ack.vim
 so $HOME/.vim/config/markdown.vim
-
+so $HOME/.vim/config/ycm.vim
