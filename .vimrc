@@ -70,6 +70,7 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 set ttyfast
 set lazyredraw
+set synmaxcol=256
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -213,3 +214,4 @@ so $HOME/.vim/config/jedi.vim
 so $HOME/.vim/config/ack.vim
 so $HOME/.vim/config/markdown.vim
 so $HOME/.vim/config/ycm.vim
+so $HOME/.vim/config/togglecursor.vim
