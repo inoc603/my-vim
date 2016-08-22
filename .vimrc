@@ -47,6 +47,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'mtscout6/syntastic-local-eslint.vim'
+Plugin 'posva/vim-vue'
+Plugin 'digitaltoad/vim-pug'
 
 " Python
 Plugin 'davidhalter/jedi-vim'
@@ -58,6 +60,7 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set bg=dark
 let g:solarized_termtrans = 1
 colorscheme solarized
 set colorcolumn=80
@@ -120,8 +123,10 @@ inoremap kj <Esc>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quick save
 nmap <leader>w :w<CR>			
-" Quickly close current window
-nmap <leader>q :q<CR>			" 
+" Close current window
+nmap <leader>q :q<CR>
+" Close all windows
+nmap <leader>Q :qall<CR>
 " Save session
 nmap <leader>s :mksession<CR>		
 set nobackup
@@ -195,6 +200,10 @@ map <A-k> <leader>k
 map ∆ <leader>j
 map ˚ <leader>k
 
+" Stay in visual mode after indent
+vnoremap > >gv
+vnoremap < <gv
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sourcing custom config
@@ -215,3 +224,4 @@ so $HOME/.vim/config/ack.vim
 so $HOME/.vim/config/markdown.vim
 so $HOME/.vim/config/ycm.vim
 so $HOME/.vim/config/togglecursor.vim
+so $HOME/.vim/config/multiple-cursor.vim
