@@ -53,6 +53,9 @@ Plugin 'digitaltoad/vim-pug'
 " Python
 Plugin 'davidhalter/jedi-vim'
 
+" Rust
+Plugin 'rust-lang/rust.vim'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -95,7 +98,7 @@ set hlsearch
 set ignorecase
 set smartcase
 " Cancel highlight when you're done seraching
-map <silent><leader>h :nohlsearch<CR>
+map <silent><leader>nh :nohlsearch<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -103,9 +106,6 @@ map <silent><leader>h :nohlsearch<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use space as leader key
 let mapleader=' '
-
-" Enter command mode without pressing shift
-noremap ; :
 
 " Disable arrow keys
 noremap <up> <nop>
