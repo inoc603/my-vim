@@ -21,7 +21,8 @@ Plugin 'easymotion/vim-easymotion'	" Makes moving aroung easier
 Plugin 'scrooloose/nerdcommenter'	" Code comment
 Plugin 'kien/ctrlp.vim'			" File and buffer searching
 Plugin 'tpope/vim-fugitive'		" Git intergration
-Plugin 'scrooloose/syntastic'		" Syntax check
+Plugin 'benekastah/neomake'		" Syntax check
+" Plugin 'scrooloose/syntastic'		" Syntax check
 Plugin 'tpope/vim-surround'		" Edit surrounds with ease 
 Plugin 'fholgado/minibufexpl.vim'	" Buffer explorer
 Plugin 'majutsushi/tagbar'		" Tagbar to show code structure
@@ -98,7 +99,7 @@ set hlsearch
 set ignorecase
 set smartcase
 " Cancel highlight when you're done seraching
-map <silent><leader>nh :nohlsearch<CR>
+map <silent><F10> :nohlsearch<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -169,6 +170,37 @@ map <C-l> <C-W>l
 nmap <leader>h :split<CR>
 nmap <leader>v :vsplit<CR>
 
+" Toggle location and quick fix window
+function! GetBufferList()
+  redir =>buflist
+  silent! ls!
+  redir END
+  return buflist
+endfunction
+
+function! ToggleList(bufname, pfx)
+  let buflist = GetBufferList()
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+    if bufwinnr(bufnum) != -1
+      exec(a:pfx.'close')
+      return
+    endif
+  endfor
+  if a:pfx == 'l' && len(getloclist(0)) == 0
+      echohl ErrorMsg
+      echo "Location List is Empty."
+      return
+  endif
+  let winnr = winnr()
+  exec('botright '.a:pfx.'open')
+  if winnr() != winnr
+    wincmd p
+  endif
+endfunction
+
+nmap <silent> <leader>l :call ToggleList("Location", 'l')<CR>
+nmap <silent> <leader>e :call ToggleList("Quickfix", 'c')<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Copy and Paste
@@ -209,7 +241,7 @@ vnoremap < <gv
 " Sourcing custom config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 so $HOME/.vim/config/tmux.vim
-so $HOME/.vim/config/syntastic.vim
+so $HOME/.vim/config/neomake.vim
 so $HOME/.vim/config/obsession.vim
 so $HOME/.vim/config/ctrlp.vim
 so $HOME/.vim/config/tagbar.vim
