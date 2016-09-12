@@ -7,9 +7,8 @@ let g:neomake_javascript_eslint_maker = {
 
 function! NeomakeESlintChecker()
   let l:eslint = 'eslint'
-
   if executable('npm-which')
-    let l:eslint = split(system('npm-which eslint'))[0]
+    let l:eslint = split(system('cd ' . expand("%:p:h") . ';npm-which eslint'))[0]
   endif
 
   let b:neomake_javascript_eslint_exe = l:eslint
