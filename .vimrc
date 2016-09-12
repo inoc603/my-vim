@@ -114,8 +114,7 @@ noremap <down> <nop>
 noremap <left> <nop>
 noremap <right> <nop>
 
-" Use jk or kj to switch to normal mode
-inoremap jk <Esc>
+" Use kj to switch to normal mode
 inoremap kj <Esc>
 
 
