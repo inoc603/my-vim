@@ -17,6 +17,8 @@ Plugin 'bling/vim-airline'		" Simple status line
 Plugin 'scrooloose/nerdtree'		" Directory tree view
 Plugin 'Xuyuanp/nerdtree-git-plugin'	" Show git status in nerdtree
 Plugin 'valloric/youcompleteme'		" Autocomplete
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'easymotion/vim-easymotion'	" Makes moving aroung easier
 Plugin 'scrooloose/nerdcommenter'	" Code comment
 Plugin 'kien/ctrlp.vim'			" File and buffer searching
@@ -214,22 +216,19 @@ imap <C-v> <Esc><C-v>a
 " Editing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Move line(s) up and down
-nnoremap <leader>j :m .+1<CR>==
-nnoremap <leader>k :m .-2<CR>==
-vnoremap <leader>j :m '>+1<CR>gv=gv
-vnoremap <leader>k :m '<-2<CR>gv=gv
-
 " How I want to move lines, though it never works in Iterm2, even you set your
 " alt key to act as meta key
-map <A-j> <leader>j
-map <A-k> <leader>k
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Special mapping for Alt to work with iTerm2 on mac, with default setting
 " If alt key is configured to send +Esc, you can have a mapping with an
 " invisible prefix, but you'll often accidentally move your code when exiting
 " insert mode
-map ∆ <leader>j
-map ˚ <leader>k
+map ∆ <A-j>
+map ˚ <A-k>
 
 " Stay in visual mode after indent
 vnoremap > >gv
@@ -256,3 +255,4 @@ so $HOME/.vim/config/markdown.vim
 so $HOME/.vim/config/ycm.vim
 so $HOME/.vim/config/togglecursor.vim
 so $HOME/.vim/config/multiple-cursor.vim
+so $HOME/.vim/config/ultisnips.vim
