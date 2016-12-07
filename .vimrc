@@ -54,7 +54,7 @@ Plugin 'posva/vim-vue'
 Plugin 'digitaltoad/vim-pug'
 
 " Python
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
 
 " Rust
 Plugin 'rust-lang/rust.vim'

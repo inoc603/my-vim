@@ -21,3 +21,5 @@ endfunction
 
 map <leader>e :<C-u>call ToggleErrors()<CR>
 
+" I do not write java
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java'] }
