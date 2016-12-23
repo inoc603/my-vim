@@ -7,57 +7,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-sensible'
-
-" Some colorschemes 
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
-
-Plugin 'bling/vim-airline'		" Simple status line
-Plugin 'scrooloose/nerdtree'		" Directory tree view
-Plugin 'Xuyuanp/nerdtree-git-plugin'	" Show git status in nerdtree
-Plugin 'valloric/youcompleteme'		" Autocomplete
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'easymotion/vim-easymotion'	" Makes moving aroung easier
-Plugin 'scrooloose/nerdcommenter'	" Code comment
-Plugin 'kien/ctrlp.vim'			" File and buffer searching
-Plugin 'tpope/vim-fugitive'		" Git intergration
-Plugin 'benekastah/neomake'		" Syntax check
-" Plugin 'scrooloose/syntastic'		" Syntax check
-Plugin 'tpope/vim-surround'		" Edit surrounds with ease 
-Plugin 'fholgado/minibufexpl.vim'	" Buffer explorer
-Plugin 'majutsushi/tagbar'		" Tagbar to show code structure
-Plugin 'jiangmiao/auto-pairs'		" Auto pairs parenthesis
-Plugin 'editorconfig/editorconfig-vim'	" Editorconfig
-Plugin 'christoomey/vim-tmux-navigator'	" Tmux intergration
-Plugin 'tpope/vim-obsession'		" Save vim session
-Plugin 'nathanaelkane/vim-indent-guides'	" Indent guide
-Plugin 'terryma/vim-multiple-cursors'	" Multicursor editing
-Plugin 'airblade/vim-gitgutter'		" Show git diff 
-Plugin 'jszakmeister/vim-togglecursor'	" Change cursor shape
-Plugin 'mileszs/ack.vim'		" Search in project
-Plugin 'elzr/vim-json'			" Better JSON syntax
-Plugin 'godlygeek/tabular'		
-Plugin 'plasticboy/vim-markdown'	" Markdown support
-
-
-" Golang
-Plugin 'fatih/vim-go'
-
-" JavaScript
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'mtscout6/syntastic-local-eslint.vim'
-Plugin 'posva/vim-vue'
-Plugin 'digitaltoad/vim-pug'
-
-" Python
-" Plugin 'davidhalter/jedi-vim'
-
-" Rust
-Plugin 'rust-lang/rust.vim'
+so ./config/plugins.vim
 
 call vundle#end()
 filetype plugin indent on
@@ -234,25 +184,3 @@ map ˚ <A-k>
 vnoremap > >gv
 vnoremap < <gv
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sourcing custom config
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-so $HOME/.vim/config/tmux.vim
-so $HOME/.vim/config/neomake.vim
-so $HOME/.vim/config/obsession.vim
-so $HOME/.vim/config/ctrlp.vim
-so $HOME/.vim/config/tagbar.vim
-so $HOME/.vim/config/nerdcommenter.vim
-so $HOME/.vim/config/nerdtree.vim
-so $HOME/.vim/config/js.vim
-so $HOME/.vim/config/python.vim
-so $HOME/.vim/config/go.vim
-so $HOME/.vim/config/minibuffer.vim
-so $HOME/.vim/config/jedi.vim
-so $HOME/.vim/config/ack.vim
-so $HOME/.vim/config/markdown.vim
-so $HOME/.vim/config/ycm.vim
-so $HOME/.vim/config/togglecursor.vim
-so $HOME/.vim/config/multiple-cursor.vim
-so $HOME/.vim/config/ultisnips.vim

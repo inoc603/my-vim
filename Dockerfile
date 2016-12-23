@@ -1,17 +1,13 @@
-FROM centos:7
+FROM alpine:edge
+ENV CMAKE_EXTRA_FLAGS=-DENABLE_JEMALLOC=OFF
+# RUN echo "http://dl-4.alpinelinux.org/alpine/edge/" >> /etc/apk/repositories
+RUN apk add --update-cache
+RUN apk add git
+RUN apk add libtermkey unibilium
 
-# Install neovim
-RUN yum update -y && \
-	yum -y install epel-release && \
-	curl -o /etc/yum.repos.d/dperson-neovim-epel-7.repo https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo && \
-	yum -y install neovim
-
-# Install node
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash && \
-	export NVM_DIR="/root/.nvm" && [ -s "$NVM_DIR/nvm.sh"  ] && . "$NVM_DIR/nvm.sh" && \
-	nvm install v6.9.0 
-
-RUN yum -y install git
+ADD ./tmp/bin/nvim /usr/local/bin/nvim
+ADD ./tmp/share/nvim /usr/local/share
+ADD ./tmp/lib/* /usr/local/lib/
 
 ADD . /root/.vim
 
@@ -20,13 +16,16 @@ WORKDIR /root/.vim
 RUN mkdir -p ~/.config && \
 	ln -s ~/.vim ~/.config/nvim && \
 	ln -s ~/.vim/.vimrc ~/.vim/init.vim && \
-	ls -l ~/.config 
-	# git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ./bundle/Vundle.vim
+	ls -l ~/.config  && \
+	git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ./bundle/Vundle.vim
 
-RUN cd bundle/tern_for_vim && \
-	export NVM_DIR="/root/.nvm" && [ -s "$NVM_DIR/nvm.sh"  ] && . "$NVM_DIR/nvm.sh" && \
-	npm i -d --registry=https://registry.npm.taobao.org/
+RUN apk add \
+	python \
+	py2-pip \
+	g++
 
-RUN cd bundle/youcompleteme && \
-	git submodule update --init --recursive && \
-	./install.py --gocode-completer --tern-completer
+RUN apk add python-dev
+
+RUN pip install neovim
+
+RUN nvim +PluginInstall +qa
