@@ -113,10 +113,12 @@ vnoremap L $
 " Use Ctrl-j,k,h,l to move between windows
 " With the christoomey/vim-tmux-navigator plugin you can navigate between tmux
 " and vim windows seamlessly
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+if mapcheck("<C-j>", ":TmuxNavigateDown") == ""
+	map <C-j> <C-W>j
+	map <C-k> <C-W>k
+	map <C-h> <C-W>h
+	map <C-l> <C-W>l
+endif
 
 nmap <leader>h :split<CR>
 nmap <leader>v :vsplit<CR>
