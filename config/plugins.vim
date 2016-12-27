@@ -43,10 +43,8 @@ so $HOME/.vim/config/minibuffer.vim
 Plugin 'majutsushi/tagbar'		" Tagbar to show code structure
 so $HOME/.vim/config/tagbar.vim
 
-if executable('tmux')
-	Plugin 'christoomey/vim-tmux-navigator'	" Tmux intergration
-	so $HOME/.vim/config/tmux.vim
-endif
+Plugin 'christoomey/vim-tmux-navigator'	" Tmux intergration
+so $HOME/.vim/config/tmux.vim
 
 Plugin 'tpope/vim-obsession'		" Save vim session
 so $HOME/.vim/config/obsession.vim
