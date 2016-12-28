@@ -186,3 +186,4 @@ map ˚ <A-k>
 vnoremap > >gv
 vnoremap < <gv
 
+so $HOME/.vim/config/plugins-config.vim
