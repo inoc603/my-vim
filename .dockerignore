@@ -2,6 +2,5 @@
 .gitignore
 LICENSE
 README.md
-Makefile
 Dockerfile
 bundle
