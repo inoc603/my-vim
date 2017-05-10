@@ -26,7 +26,7 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'scrooloose/nerdcommenter'	" Code comment
 
-Plugin 'kien/ctrlp.vim'			" File and buffer searching
+Plugin 'ctrlpvim/ctrlp.vim'		" File and buffer searching
 
 Plugin 'benekastah/neomake'		" Syntax check
 
@@ -41,11 +41,11 @@ Plugin 'tpope/vim-obsession'		" Save vim session
 
 Plugin 'terryma/vim-multiple-cursors'	" Multicursor editing
 
-Plugin 'jszakmeister/vim-togglecursor'	" Change cursor shape
-
 Plugin 'mileszs/ack.vim'		" Search in project
 
 Plugin 'plasticboy/vim-markdown'	" Markdown support
+
+Plugin 'junegunn/fzf'
 
 " Golang
 Plugin 'fatih/vim-go'

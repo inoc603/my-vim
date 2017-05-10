@@ -11,7 +11,6 @@ so $HOME/.vim/config/tagbar.vim
 so $HOME/.vim/config/tmux.vim
 so $HOME/.vim/config/obsession.vim
 so $HOME/.vim/config/multiple-cursor.vim
-so $HOME/.vim/config/togglecursor.vim
 so $HOME/.vim/config/ack.vim
 so $HOME/.vim/config/markdown.vim
 so $HOME/.vim/config/go.vim
