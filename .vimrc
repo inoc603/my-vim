@@ -30,6 +30,7 @@ let g:indent_guides_guide_size = 1
 set ttyfast
 set lazyredraw
 set synmaxcol=256
+set guicursor=i:ver25	" turn cursor to vertical line in insert mode
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
