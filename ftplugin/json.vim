@@ -9,8 +9,3 @@ let g:vim_json_warnings=1
 function! FormatJSON()
 	:%!python -m json.tool
 endfunction
-
-" NOTE: this only works when the editing a file. If the buffer is not saved to
-" a file, nothing happens.
-vnoremap <leader>j :call FormatJSON()<CR>
-nnoremap <leader>j :call FormatJSON()<CR>

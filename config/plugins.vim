@@ -14,7 +14,6 @@ Plugin 'nathanaelkane/vim-indent-guides'	" Indent guide
 Plugin 'easymotion/vim-easymotion'	" Makes moving aroung easier
 Plugin 'tpope/vim-fugitive'		" Git intergration
 Plugin 'tpope/vim-surround'		" Edit surrounds with ease 
-" Plugin 'scrooloose/syntastic'		" Syntax check
 
 Plugin 'scrooloose/nerdtree'		" Directory tree view
 Plugin 'Xuyuanp/nerdtree-git-plugin'	" Show git status in nerdtree
@@ -45,7 +44,9 @@ Plugin 'mileszs/ack.vim'		" Search in project
 
 Plugin 'plasticboy/vim-markdown'	" Markdown support
 
-Plugin 'junegunn/fzf'
+Plugin 'junegunn/vim-easy-align'	
+
+Plugin 'junegunn/fzf'			" Fuzzy finder
 
 " Golang
 Plugin 'fatih/vim-go'
