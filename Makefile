@@ -1,3 +1,13 @@
+
+define link
+	@ if [ -L $(2) ]; then \
+		echo "Remove link $(2)"; \
+		rm -f $(2); \
+	fi
+	@ ln -s $(1) $(2) && \
+		echo "Link $(1) to $(2)"
+endef
+
 clean:
 	rm -rf bundle
 
@@ -41,10 +51,8 @@ vim-go:
 	go get -v "github.com/josharian/impl"
 
 install:
-	rm -f ~/.vim ~/.vimrc
-	ln -s $(CURDIR) ~/.vim
-	ln -s $(CURDIR)/.vimrc ~/.vimrc
+	$(call link,$(CURDIR),~/.vim)
+	$(call link,~/.vim/.vimrc,~/.vimrc)
 	mkdir -p ~/.config
-	ln -s ~/.vim ~/.config/nvim 
-	rm ~/.vim/init.vim
-	ln -s ~/.vim/.vimrc ~/.vim/init.vim 
+	$(call link,~/.vim,~/.config/nvim)
+	$(call link,~/.vim/.vimrc,~/.vim/init.vim)
