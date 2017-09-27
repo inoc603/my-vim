@@ -4,7 +4,8 @@ Plugin 'tpope/vim-sensible'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 
-Plugin 'bling/vim-airline'		" Simple status line
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'editorconfig/editorconfig-vim'	" Editorconfig
 Plugin 'jiangmiao/auto-pairs'		" Auto pairs parenthesis
 Plugin 'airblade/vim-gitgutter'		" Show git diff 
@@ -28,9 +29,6 @@ Plugin 'scrooloose/nerdcommenter'	" Code comment
 Plugin 'ctrlpvim/ctrlp.vim'		" File and buffer searching
 
 Plugin 'benekastah/neomake'		" Syntax check
-
-
-Plugin 'fholgado/minibufexpl.vim'	" Buffer explorer
 
 Plugin 'majutsushi/tagbar'		" Tagbar to show code structure
 
@@ -64,3 +62,6 @@ Plugin 'digitaltoad/vim-pug'
 
 " Rust
 Plugin 'rust-lang/rust.vim'
+
+" TOML
+Plugin 'cespare/vim-toml'

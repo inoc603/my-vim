@@ -6,7 +6,7 @@ so $HOME/.vim/config/ultisnips.vim
 so $HOME/.vim/config/nerdcommenter.vim
 so $HOME/.vim/config/ctrlp.vim
 so $HOME/.vim/config/neomake.vim
-so $HOME/.vim/config/minibuffer.vim
+so $HOME/.vim/config/airline.vim
 so $HOME/.vim/config/tagbar.vim
 so $HOME/.vim/config/tmux.vim
 so $HOME/.vim/config/obsession.vim
