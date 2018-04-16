@@ -1,6 +1,7 @@
 so $HOME/.vim/config/nerdtree.vim
 so $HOME/.vim/config/ultisnips.vim
 so $HOME/.vim/config/nerdcommenter.vim
+so $HOME/.vim/config/deoplete.vim
 so $HOME/.vim/config/fzf.vim
 so $HOME/.vim/config/neomake.vim
 so $HOME/.vim/config/airline.vim
