@@ -30,7 +30,7 @@ build:
 
 ycm:
 	cd bundle/youcompleteme && \
-		python install.py --tern-completer
+		python install.py --tern-completer --clang-completer
 
 tern:
 	cd bundle/tern_for_vim && \

@@ -6,45 +6,36 @@ Plugin 'tomasr/molokai'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'editorconfig/editorconfig-vim'	" Editorconfig
-Plugin 'jiangmiao/auto-pairs'		" Auto pairs parenthesis
-Plugin 'airblade/vim-gitgutter'		" Show git diff 
-Plugin 'elzr/vim-json'			" Better JSON syntax
-Plugin 'godlygeek/tabular'		
-Plugin 'nathanaelkane/vim-indent-guides'	" Indent guide
-Plugin 'easymotion/vim-easymotion'	" Makes moving aroung easier
-Plugin 'tpope/vim-fugitive'		" Git intergration
-Plugin 'tpope/vim-surround'		" Edit surrounds with ease 
-
 Plugin 'scrooloose/nerdtree'		" Directory tree view
 Plugin 'Xuyuanp/nerdtree-git-plugin'	" Show git status in nerdtree
+Plugin 'junegunn/fzf'			" Fuzzy finder
+Plugin 'junegunn/fzf.vim'
+Plugin 'christoomey/vim-tmux-navigator'	" Tmux intergration
+Plugin 'airblade/vim-gitgutter'		" Show git diff 
+Plugin 'tpope/vim-fugitive'		" Git intergration
+Plugin 'nathanaelkane/vim-indent-guides'	" Indent guide
+Plugin 'mileszs/ack.vim'		" Search in project
+Plugin 'majutsushi/tagbar'		" Tagbar to show code structure
+Plugin 'godlygeek/tabular'		
 
-Plugin 'valloric/youcompleteme'		" Autocomplete
+Plugin 'jiangmiao/auto-pairs'		" Auto pairs parenthesis
+Plugin 'easymotion/vim-easymotion'	" Makes moving aroung easier
+Plugin 'tpope/vim-surround'		" Edit surrounds with ease 
+Plugin 'scrooloose/nerdcommenter'	" Code comment
+Plugin 'terryma/vim-multiple-cursors'	" Multicursor editing
+Plugin 'junegunn/vim-easy-align'	
+Plugin 'editorconfig/editorconfig-vim'	" Editorconfig
+
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'zchee/deoplete-go'
+Plugin 'zchee/deoplete-jedi'
 
 Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-
-Plugin 'scrooloose/nerdcommenter'	" Code comment
-
-Plugin 'ctrlpvim/ctrlp.vim'		" File and buffer searching
 
 Plugin 'benekastah/neomake'		" Syntax check
 
-Plugin 'majutsushi/tagbar'		" Tagbar to show code structure
-
-Plugin 'christoomey/vim-tmux-navigator'	" Tmux intergration
-
-Plugin 'tpope/vim-obsession'		" Save vim session
-
-Plugin 'terryma/vim-multiple-cursors'	" Multicursor editing
-
-Plugin 'mileszs/ack.vim'		" Search in project
-
+Plugin 'elzr/vim-json'			" Better JSON syntax
 Plugin 'plasticboy/vim-markdown'	" Markdown support
-
-Plugin 'junegunn/vim-easy-align'	
-
-Plugin 'junegunn/fzf'			" Fuzzy finder
 
 " Golang
 Plugin 'fatih/vim-go'
@@ -56,9 +47,6 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'posva/vim-vue'
 Plugin 'digitaltoad/vim-pug'
-
-" Python
-" Plugin 'davidhalter/jedi-vim'
 
 " Rust
 Plugin 'rust-lang/rust.vim'
