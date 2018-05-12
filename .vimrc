@@ -197,6 +197,9 @@ nnoremap <A-k> :m .-2<CR>==
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
+" Insert new line using enter
+nnoremap <CR> o<Esc>
+
 " Special mapping for Alt to work with iTerm2 on mac, with default setting
 " If alt key is configured to send +Esc, you can have a mapping with an
 " invisible prefix, but you'll often accidentally move your code when exiting

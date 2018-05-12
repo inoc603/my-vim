@@ -25,10 +25,12 @@ Plugin 'scrooloose/nerdcommenter'	" Code comment
 Plugin 'terryma/vim-multiple-cursors'	" Multicursor editing
 Plugin 'junegunn/vim-easy-align'	
 Plugin 'editorconfig/editorconfig-vim'	" Editorconfig
+Plugin 'honza/vim-snippets'		" common snippets
 
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'zchee/deoplete-go'
 Plugin 'zchee/deoplete-jedi'
+Plugin 'zchee/deoplete-clang'
 
 Plugin 'SirVer/ultisnips'
 

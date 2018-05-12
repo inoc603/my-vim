@@ -15,3 +15,13 @@ function! NeomakeESlintChecker()
 endfunction
 
 autocmd FileType javascript :call NeomakeESlintChecker()
+
+let g:neomake_python_enabled_makers = ['python', 'flake8', 'pylint']
+if executable('pyre')
+	call extend(g:neomake_python_enabled_makers, ['pyre'])
+endif
+let g:neomake_python_pyre_maker = {
+	\ 'args': ['--noninteractive'],
+	\ 'append_file': 0,
+	\ 'errorformat': '%f:%l:%c %m'
+	\ }
