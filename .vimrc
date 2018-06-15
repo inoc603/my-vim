@@ -177,6 +177,8 @@ endfunction
 
 command! Bdi :call DeleteInactiveBufs()
 
+set diffopt=vertical
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Copy and Paste
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -210,5 +212,7 @@ map ˚ <A-k>
 " Stay in visual mode after indent
 vnoremap > >gv
 vnoremap < <gv
+
+set autowriteall
 
 so $HOME/.vim/config/plugins-config.vim

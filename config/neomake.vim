@@ -1,4 +1,3 @@
-autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_javascript_eslint_maker = {
             \ 'args': ['--no-color', '--format', 'compact'],
@@ -16,7 +15,7 @@ endfunction
 
 autocmd FileType javascript :call NeomakeESlintChecker()
 
-let g:neomake_python_enabled_makers = ['python', 'flake8', 'pylint']
+let g:neomake_python_enabled_makers = ['python', 'pylint']
 if executable('pyre')
 	call extend(g:neomake_python_enabled_makers, ['pyre'])
 endif
@@ -25,3 +24,6 @@ let g:neomake_python_pyre_maker = {
 	\ 'append_file': 0,
 	\ 'errorformat': '%f:%l:%c %m'
 	\ }
+
+autocmd! BufWritePost * Neomake
+autocmd! BufWritePost *.py :Black

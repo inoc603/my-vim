@@ -35,6 +35,7 @@ Plugin 'zchee/deoplete-clang'
 Plugin 'SirVer/ultisnips'
 
 Plugin 'benekastah/neomake'		" Syntax check
+Plugin 'ambv/black'			" Python formatter
 
 Plugin 'elzr/vim-json'			" Better JSON syntax
 Plugin 'plasticboy/vim-markdown'	" Markdown support
