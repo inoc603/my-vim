@@ -27,12 +27,20 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'editorconfig/editorconfig-vim'	" Editorconfig
 Plugin 'honza/vim-snippets'		" common snippets
 
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'zchee/deoplete-go'
-Plugin 'zchee/deoplete-jedi'
-Plugin 'zchee/deoplete-clang'
+" Plugin 'Shougo/deoplete.nvim'
+" Plugin 'zchee/deoplete-go'
+" Plugin 'zchee/deoplete-jedi'
+" Plugin 'zchee/deoplete-clang'
 
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
+
+" Completion
+Plugin 'neoclide/coc.nvim'
+
+" Using tig in vim
+Plugin 'iberianpig/tig-explorer.vim'
+Plugin 'rbgrouleff/bclose.vim'
+
 
 Plugin 'benekastah/neomake'		" Syntax check
 Plugin 'ambv/black'			" Python formatter
@@ -44,10 +52,10 @@ Plugin 'plasticboy/vim-markdown'	" Markdown support
 Plugin 'fatih/vim-go'
 
 " JavaScript
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'mtscout6/syntastic-local-eslint.vim'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'mxw/vim-jsx'
+" Plugin 'marijnh/tern_for_vim'
+" Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'posva/vim-vue'
 Plugin 'digitaltoad/vim-pug'
 
