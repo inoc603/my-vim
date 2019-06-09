@@ -25,5 +25,13 @@ let g:neomake_python_pyre_maker = {
 	\ 'errorformat': '%f:%l:%c %m'
 	\ }
 
-autocmd! BufWritePost * Neomake
+fun! RunNeomake()
+    " Don't strip on these filetypes
+    if &ft =~ 'go'
+	return
+    endif
+    Neomake
+endfun
+
+autocmd! BufWritePost * call RunNeomake()
 autocmd! BufWritePost *.py :Black
