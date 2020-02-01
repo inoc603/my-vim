@@ -1,66 +1,74 @@
-Plugin 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible'
 
-" Some colorschemes 
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
+" Colorschemes 
+Plug 'altercation/vim-colors-solarized'
+Plug 'tomasr/molokai'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'		" Directory tree view
-Plugin 'Xuyuanp/nerdtree-git-plugin'	" Show git status in nerdtree
-Plugin 'junegunn/fzf'			" Fuzzy finder
-Plugin 'junegunn/fzf.vim'
-Plugin 'christoomey/vim-tmux-navigator'	" Tmux intergration
-Plugin 'airblade/vim-gitgutter'		" Show git diff 
-Plugin 'tpope/vim-fugitive'		" Git intergration
-Plugin 'nathanaelkane/vim-indent-guides'	" Indent guide
-Plugin 'mileszs/ack.vim'		" Search in project
-Plugin 'majutsushi/tagbar'		" Tagbar to show code structure
-Plugin 'godlygeek/tabular'		
+" Status line
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-Plugin 'jiangmiao/auto-pairs'		" Auto pairs parenthesis
-Plugin 'easymotion/vim-easymotion'	" Makes moving aroung easier
-Plugin 'tpope/vim-surround'		" Edit surrounds with ease 
-Plugin 'scrooloose/nerdcommenter'	" Code comment
-Plugin 'terryma/vim-multiple-cursors'	" Multicursor editing
-Plugin 'junegunn/vim-easy-align'	
-Plugin 'editorconfig/editorconfig-vim'	" Editorconfig
-Plugin 'honza/vim-snippets'		" common snippets
+" Directory tree view
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+" Show git status in nerdtree
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 
-" Plugin 'Shougo/deoplete.nvim'
-" Plugin 'zchee/deoplete-go'
-" Plugin 'zchee/deoplete-jedi'
-" Plugin 'zchee/deoplete-clang'
+" Closing buffer
+Plug 'rbgrouleff/bclose.vim'
 
-" Plugin 'SirVer/ultisnips'
+" Fuzzy finder
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
+Plug 'mileszs/ack.vim'   " Search in project
+Plug 'tpope/vim-abolish' " Search and replace
+
+Plug 'christoomey/vim-tmux-navigator' " Seamless navigation in vim and tmux panel
+Plug 'edkolev/tmuxline.vim'           " Tmux status line intergration
+
+Plug 'airblade/vim-gitgutter'      " Show git diff
+Plug 'tpope/vim-fugitive'          " Git intergration
+Plug 'iberianpig/tig-explorer.vim' " Using tig in vim
+
+Plug 'nathanaelkane/vim-indent-guides'	" Indent guide
+Plug 'majutsushi/tagbar'		" Tagbar to show code structure
+
+Plug 'jiangmiao/auto-pairs'          " Auto pairs parenthesis
+Plug 'easymotion/vim-easymotion'     " Makes moving aroung easier
+Plug 'tpope/vim-surround'            " Edit surrounds with ease
+Plug 'scrooloose/nerdcommenter'      " Code comment
+Plug 'terryma/vim-multiple-cursors'  " Multicursor editing
+Plug 'junegunn/vim-easy-align'       " Code alignment
+Plug 'editorconfig/editorconfig-vim' " Editorconfig
+Plug 'honza/vim-snippets'            " Common snippets
+Plug 'benekastah/neomake'            " Syntax check
 
 " Completion
-Plugin 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Using tig in vim
-Plugin 'iberianpig/tig-explorer.vim'
-Plugin 'rbgrouleff/bclose.vim'
+" Python
+Plug 'ambv/black', { 'for': 'python' } " Python formatter
 
+" JSON
+Plug 'elzr/vim-json', { 'for': 'json' }
 
-Plugin 'benekastah/neomake'		" Syntax check
-Plugin 'ambv/black'			" Python formatter
-
-Plugin 'elzr/vim-json'			" Better JSON syntax
-Plugin 'plasticboy/vim-markdown'	" Markdown support
+" Markdown
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 " Golang
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'for': 'go' }
 
 " JavaScript
-" Plugin 'pangloss/vim-javascript'
-" Plugin 'mxw/vim-jsx'
-" Plugin 'marijnh/tern_for_vim'
-" Plugin 'mtscout6/syntastic-local-eslint.vim'
-Plugin 'posva/vim-vue'
-Plugin 'digitaltoad/vim-pug'
+Plug 'posva/vim-vue', { 'for': 'vue' }
+Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 
 " Rust
-Plugin 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 " TOML
-Plugin 'cespare/vim-toml'
+Plug 'cespare/vim-toml', { 'for': 'toml' }
+
+" Thrift
+Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
+
