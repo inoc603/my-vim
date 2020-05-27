@@ -3,6 +3,7 @@ Plug 'tpope/vim-sensible'
 " Colorschemes 
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
 
 " Status line
 Plug 'vim-airline/vim-airline'
@@ -61,7 +62,8 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 " JavaScript
 Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
 
 " Rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
@@ -72,3 +74,5 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 " Thrift
 Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
 
+" GraphQL
+Plug 'jparise/vim-graphql', { 'for': 'graphql' }

@@ -12,7 +12,8 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set bg=dark
 let g:solarized_termtrans = 1
-colorscheme solarized
+" colorscheme solarized
+colorscheme gruvbox
 set colorcolumn=80
 set number              " show line numbers
 set showcmd             " show command in bottom bar

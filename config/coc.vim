@@ -64,6 +64,9 @@ nmap <leader>f :Format<CR>
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+
 let g:coc_global_extensions = [
 \ 'coc-json', 'coc-yaml',
 \ 'coc-pyls', 

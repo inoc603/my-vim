@@ -1,13 +1,27 @@
 {
   "languageserver": {
     "golang": {
-    "command": "gopls",
-    "args": ["-remote=127.0.0.1:5533"],
-    "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-    "filetypes": ["go"]
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": [
+        "go"
+      ]
     }
   },
   "typescript.preferences.noSemicolons": true,
   "tsserver.npm": "/root/.nvm/versions/node/v12.6.0/bin/npm",
-  "coc.preferences.formatOnSaveFiletypes": ["ts"]
+  "coc.preferences.formatOnSaveFiletypes": [
+    "typescript",
+    "typescriptreact",
+    "css",
+    "javascript"
+  ],
+  "emmet.includeLanguages": {
+    "typescript": "typescriptreact"
+  }
 }

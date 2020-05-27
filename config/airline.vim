@@ -10,5 +10,7 @@ map ¬ :b#<CR>
 " Alt-o to switch to previous buffer(left)
 "
 map ø :bprevious<CR>
+nmap - :bprevious<CR>
 " Alt-p to switch to next buffer(right)
 map π :bnext<CR>
+nmap = :bnext<CR>
