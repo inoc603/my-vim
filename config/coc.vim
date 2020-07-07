@@ -63,6 +63,7 @@ nmap <leader>f :Format<CR>
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>rw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)

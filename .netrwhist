@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/root/src/code.byted.org/ti/cdn_schedule_manager/cmd/test_sql'
+let g:netrw_dirhist_4='/root/src/code.byted.org/ti/geoisp_node/tests'
+let g:netrw_dirhist_3='/root/src/code.byted.org/ti/cdn_schedule_manager/cmd/migrate'
+let g:netrw_dirhist_2='/root/src/code.byted.org/ti/cdn_schedule_manager/cmd/migrate/kitex_gen/toutiao/videoarch/cdn_schedule_sync'
+let g:netrw_dirhist_1='/root/src/code.byted.org/ti/cdn_schedule_manager_graphql'
