@@ -48,7 +48,7 @@ Plug 'benekastah/neomake'            " Syntax check
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Python
-Plug 'ambv/black', { 'for': 'python' } " Python formatter
+Plug 'psf/black', { 'branch': 'stable', 'for': 'python' } " Python formatter
 
 " JSON
 Plug 'elzr/vim-json', { 'for': 'json' }
