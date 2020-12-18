@@ -29,9 +29,13 @@
     "typescript",
     "typescriptreact",
     "css",
-    "javascript"
+    "javascript",
+    "python"
   ],
   "emmet.includeLanguages": {
     "typescript": "typescriptreact"
-  }
+  },
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/root/.pyenv/shims/black",
+  "python.formatting.blackArgs": []
 }

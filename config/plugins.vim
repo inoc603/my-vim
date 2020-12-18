@@ -45,13 +45,13 @@ Plug 'terryma/vim-multiple-cursors'  " Multicursor editing
 Plug 'junegunn/vim-easy-align'       " Code alignment
 Plug 'editorconfig/editorconfig-vim' " Editorconfig
 Plug 'honza/vim-snippets'            " Common snippets
-Plug 'benekastah/neomake'            " Syntax check
+" Plug 'benekastah/neomake'            " Syntax check
 
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Python
-Plug 'psf/black', { 'branch': 'stable', 'for': 'python' } " Python formatter
+" Plug 'psf/black', { 'branch': 'stable', 'for': 'python' } " Python formatter
 
 " JSON
 Plug 'elzr/vim-json', { 'for': 'json' }
