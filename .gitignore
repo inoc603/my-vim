@@ -3,3 +3,5 @@ init.vim
 tmp
 black
 plugged/
+
+.netrwhist
