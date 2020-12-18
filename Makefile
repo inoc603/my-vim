@@ -59,3 +59,8 @@ install:
 	mkdir -p ~/.config
 	$(call link,~/.vim,~/.config/nvim)
 	$(call link,~/.vim/.vimrc,~/.vim/init.vim)
+
+python:
+	pyenv virtualenv 3.7.4 neovim && \
+	pyenv activate neovim && \
+	python install -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com neovim black pylint

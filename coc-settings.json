@@ -36,6 +36,6 @@
     "typescript": "typescriptreact"
   },
   "python.formatting.provider": "black",
-  "python.formatting.blackPath": "/root/.pyenv/shims/black",
+  "python.formatting.blackPath": "~/.pyenv/versions/neovim/bin/black",
   "python.formatting.blackArgs": []
 }

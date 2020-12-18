@@ -15,8 +15,8 @@ noremap <F8> :source $MYVIMRC<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Python support
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:python_host_prog = '~/.pyenv/shims/python'
-let g:python3_host_prog = '~/.pyenv/shims/python3'
+let g:python_host_prog = '~/.pyenv/versions/neovim/bin/python'
+let g:python3_host_prog = '~/.pyenv/versions/neovim/bin/python3'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display
