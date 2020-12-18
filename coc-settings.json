@@ -11,6 +11,16 @@
       "filetypes": [
         "go"
       ]
+    },
+    "elmLS": {
+      "trace.server": "messages",
+      "command": "elm-language-server",
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"],
+      "initializationOptions": {
+        "elmFormatPath": "/root/bin/elm-format",
+        "elmAnalyseTrigger": "change"
+      }
     }
   },
   "typescript.preferences.noSemicolons": true,

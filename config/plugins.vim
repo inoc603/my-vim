@@ -17,6 +17,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 " Closing buffer
 Plug 'rbgrouleff/bclose.vim'
 
+" More text objects
+Plug 'wellle/targets.vim'
+
 " Fuzzy finder
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -76,3 +79,5 @@ Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
 
 " GraphQL
 Plug 'jparise/vim-graphql', { 'for': 'graphql' }
+
+Plug 'andys8/vim-elm-syntax'
