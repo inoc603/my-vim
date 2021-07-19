@@ -68,6 +68,9 @@ nmap <leader>rw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 
+nmap <silent> <Leader>j <Plug>(coc-diagnostic-next-error)
+nmap <silent> <Leader>k <Plug>(coc-diagnostic-prev-error)
+
 let g:coc_global_extensions = [
 \ 'coc-json', 'coc-yaml',
 \ 'coc-pyls', 

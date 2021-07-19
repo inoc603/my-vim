@@ -60,7 +60,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 " Golang
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go', { 'for': ['go', 'gomod'] }
 
 " JavaScript
 Plug 'posva/vim-vue', { 'for': 'vue' }
