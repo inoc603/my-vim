@@ -9,10 +9,8 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Directory tree view
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-" Show git status in nerdtree
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Closing buffer
 Plug 'rbgrouleff/bclose.vim'
@@ -35,7 +33,6 @@ Plug 'tpope/vim-fugitive'          " Git intergration
 Plug 'iberianpig/tig-explorer.vim' " Using tig in vim
 
 Plug 'nathanaelkane/vim-indent-guides'	" Indent guide
-Plug 'majutsushi/tagbar'		" Tagbar to show code structure
 
 Plug 'jiangmiao/auto-pairs'          " Auto pairs parenthesis
 Plug 'easymotion/vim-easymotion'     " Makes moving aroung easier
@@ -44,14 +41,20 @@ Plug 'scrooloose/nerdcommenter'      " Code comment
 Plug 'terryma/vim-multiple-cursors'  " Multicursor editing
 Plug 'junegunn/vim-easy-align'       " Code alignment
 Plug 'editorconfig/editorconfig-vim' " Editorconfig
-Plug 'honza/vim-snippets'            " Common snippets
-" Plug 'benekastah/neomake'            " Syntax check
 
-" Completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig' " LSP
 
-" Python
-" Plug 'psf/black', { 'branch': 'stable', 'for': 'python' } " Python formatter
+" Autocompletion
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+
+Plug 'stevearc/dressing.nvim'
 
 " JSON
 Plug 'elzr/vim-json', { 'for': 'json' }
@@ -81,3 +84,6 @@ Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
 Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 
 Plug 'andys8/vim-elm-syntax'
+
+Plug 'nvim-lua/plenary.nvim'
+Plug '~/src/github.com/inoc603/nvim-coverage'

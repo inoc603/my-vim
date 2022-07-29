@@ -2,18 +2,13 @@
   "languageserver": {
     "golang": {
       "command": "gopls",
-      "rootPatterns": [
-        "go.mod",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
+      "args": ["-remote=auto"],
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "initializationOptions": {
-        "experimentalWorkspaceModule": false
+        "experimentalWorkspaceModule": true,
+        "memoryMode": "DegradeClosed"
       },
-      "filetypes": [
-        "go"
-      ]
+      "filetypes": ["go"]
     },
     "elmLS": {
       "trace.server": "messages",
@@ -40,7 +35,6 @@
     "typescript": "typescriptreact"
   },
   "python.formatting.provider": "black",
-  "python.formatting.blackPath":
-  "~/.zinit/plugins/pyenv---pyenv/versions/neovim/bin/black",
+  "python.formatting.blackPath": "~/.zinit/plugins/pyenv---pyenv/versions/neovim/bin/black",
   "python.formatting.blackArgs": []
 }

@@ -60,6 +60,9 @@ set smartcase
 " Cancel highlight when you're done seraching
 map <silent><F10> :nohlsearch<CR>
 
+" center the cursor when moving between search results
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Basic key map
@@ -222,3 +225,6 @@ vnoremap < <gv
 set autowriteall
 
 so $HOME/.vim/config/plugins-config.vim
+
+luafile $HOME/.vim/config/lsp.lua
+luafile $HOME/.vim/config/coverage.lua
