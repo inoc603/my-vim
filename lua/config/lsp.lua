@@ -40,11 +40,11 @@ local on_attach = function(_, bufnr)
     n('gd', vim.lsp.buf.definition)
     n('K', vim.lsp.buf.hover)
     n('gi', vim.lsp.buf.implementation)
-    n('<C-k>', vim.lsp.buf.signature_help)
     n('<space>D', vim.lsp.buf.type_definition)
     n('<space>rn', vim.lsp.buf.rename)
     n('<space>ca', vim.lsp.buf.code_action)
     n('gr', vim.lsp.buf.references)
+    -- "<cmd>Trouble lsp_references<cr>"
     n('<space>f', vim.lsp.buf.formatting)
 end
 
@@ -183,3 +183,9 @@ require('dressing').setup({
         winblend = 0,
     }
 })
+
+require("trouble").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+}

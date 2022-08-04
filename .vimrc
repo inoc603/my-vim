@@ -22,9 +22,7 @@ let g:python3_host_prog = $PYENV_ROOT."/versions/neovim/bin/python3"
 " Display
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set bg=dark
-let g:solarized_termtrans = 1
-" colorscheme solarized
-colorscheme gruvbox
+set termguicolors
 set colorcolumn=80
 set number              " show line numbers
 set showcmd             " show command in bottom bar
@@ -37,7 +35,9 @@ set ttyfast
 set lazyredraw
 set synmaxcol=256
 set guicursor=i:ver25	" turn cursor to vertical line in insert mode
+set signcolumn=yes " alwasy show sign column
 
+colorscheme gruvbox
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Wild menu
@@ -57,8 +57,9 @@ endif
 set hlsearch
 set ignorecase
 set smartcase
+
 " Cancel highlight when you're done seraching
-map <silent><F10> :nohlsearch<CR>
+nnoremap <leader>H :nohlsearch<CR>
 
 " center the cursor when moving between search results
 nnoremap n nzzzv
@@ -133,37 +134,6 @@ endif
 nmap <leader>h :split<CR>
 nmap <leader>v :vsplit<CR>
 
-" Toggle location and quick fix window
-function! GetBufferList()
-  redir =>buflist
-  silent! ls!
-  redir END
-  return buflist
-endfunction
-
-function! ToggleList(bufname, pfx)
-  let buflist = GetBufferList()
-  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
-    if bufwinnr(bufnum) != -1
-      exec(a:pfx.'close')
-      return
-    endif
-  endfor
-  if a:pfx == 'l' && len(getloclist(0)) == 0
-      echohl ErrorMsg
-      echo "Location List is Empty."
-      return
-  endif
-  let winnr = winnr()
-  exec('botright '.a:pfx.'open')
-  if winnr() != winnr
-    wincmd p
-  endif
-endfunction
-
-nmap <silent> <leader>l :call ToggleList("Location", 'l')<CR>
-nmap <silent> <leader>e :call ToggleList("Quickfix", 'c')<CR>
-
 function! DeleteInactiveBufs()
     "From tabpagebuflist() help, get a list of all buffers in all tabs
     let tablist = []
@@ -201,8 +171,7 @@ imap <C-v> <Esc><C-v>a
 " Editing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Move line(s) up and down
-" How I want to move lines, though it never works in Iterm2, even you set your
-" alt key to act as meta key
+" Probably not work in Iterm2
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 vnoremap <A-j> :m '>+1<CR>gv=gv
@@ -210,13 +179,6 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Insert new line using enter
 nnoremap <CR> o<Esc>
-
-" Special mapping for Alt to work with iTerm2 on mac, with default setting
-" If alt key is configured to send +Esc, you can have a mapping with an
-" invisible prefix, but you'll often accidentally move your code when exiting
-" insert mode
-map ∆ <A-j>
-map ˚ <A-k>
 
 " Stay in visual mode after indent
 vnoremap > >gv
@@ -226,5 +188,4 @@ set autowriteall
 
 so $HOME/.vim/config/plugins-config.vim
 
-luafile $HOME/.vim/config/lsp.lua
-luafile $HOME/.vim/config/coverage.lua
+luafile $HOME/.vim/lua/init.lua

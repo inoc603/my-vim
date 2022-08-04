@@ -6,8 +6,7 @@ Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
 
 " Status line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-lualine/lualine.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'kyazdani42/nvim-tree.lua'
@@ -26,7 +25,7 @@ Plug 'mileszs/ack.vim'   " Search in project
 Plug 'tpope/vim-abolish' " Search and replace
 
 Plug 'christoomey/vim-tmux-navigator' " Seamless navigation in vim and tmux panel
-Plug 'edkolev/tmuxline.vim'           " Tmux status line intergration
+" Plug 'edkolev/tmuxline.vim'           " Tmux status line intergration
 
 Plug 'airblade/vim-gitgutter'      " Show git diff
 Plug 'tpope/vim-fugitive'          " Git intergration
@@ -86,4 +85,5 @@ Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 Plug 'andys8/vim-elm-syntax'
 
 Plug 'nvim-lua/plenary.nvim'
-Plug '~/src/github.com/inoc603/nvim-coverage'
+Plug 'andythigpen/nvim-coverage'
+Plug 'folke/trouble.nvim'
