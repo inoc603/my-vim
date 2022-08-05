@@ -39,11 +39,22 @@ local on_attach = function(_, bufnr)
     n('gD', vim.lsp.buf.declaration)
     n('gd', vim.lsp.buf.definition)
     n('K', vim.lsp.buf.hover)
-    n('gi', vim.lsp.buf.implementation)
     n('<space>D', vim.lsp.buf.type_definition)
     n('<space>rn', vim.lsp.buf.rename)
     n('<space>ca', vim.lsp.buf.code_action)
-    n('gr', vim.lsp.buf.references)
+
+
+    local open = function(mode)
+        return function()
+            require("trouble").open({ mode = mode })
+        end
+    end
+
+    n('gr', open("lsp_references"))
+    n('gi', open("lsp_implementations"))
+    n('<leader>d', open("document_diagnostics"))
+
+
     -- "<cmd>Trouble lsp_references<cr>"
     n('<space>f', vim.lsp.buf.formatting)
 end
