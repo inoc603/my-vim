@@ -88,3 +88,5 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'andythigpen/nvim-coverage'
 Plug 'folke/trouble.nvim'
 Plug 'kazhala/close-buffers.nvim'
+Plug 'norcalli/nvim-colorizer.lua'
+
