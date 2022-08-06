@@ -21,16 +21,6 @@ Plug 'airblade/vim-gitgutter'      " Show git diff
 Plug 'tpope/vim-fugitive'          " Git intergration
 Plug 'iberianpig/tig-explorer.vim' " Using tig in vim
 
-Plug 'nathanaelkane/vim-indent-guides'	" Indent guide
-
-Plug 'jiangmiao/auto-pairs'          " Auto pairs parenthesis
-Plug 'easymotion/vim-easymotion'     " Makes moving aroung easier
-Plug 'tpope/vim-surround'            " Edit surrounds with ease
-Plug 'scrooloose/nerdcommenter'      " Code comment
-Plug 'terryma/vim-multiple-cursors'  " Multicursor editing
-Plug 'junegunn/vim-easy-align'       " Code alignment
-Plug 'editorconfig/editorconfig-vim' " Editorconfig
-
 " JSON
 Plug 'elzr/vim-json', { 'for': 'json' }
 
@@ -56,6 +46,3 @@ Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
 Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 
 Plug 'andys8/vim-elm-syntax'
-
-Plug 'nvim-lua/plenary.nvim'
-Plug 'andythigpen/nvim-coverage'

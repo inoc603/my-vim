@@ -136,6 +136,15 @@ nmap <leader>v :vsplit<CR>
 
 set diffopt=vertical
 
+" - to switch to previous buffer(left)
+nmap - :bprevious<CR>
+" = to switch to next buffer(right)
+nmap = :bnext<CR>
+
+" These only works on iTerm2
+" Alt-l to swtich to last used buffer
+map ¬ :b#<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Copy and Paste
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

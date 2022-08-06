@@ -28,9 +28,10 @@ use {
     end,
 }
 
+require("config.edit")
+require("config.tmux")
 require("config.explorer")
 require("config.cmp")
 require("config.lualine")
 require("config.lsp")
 require("config.go")
-require("config.coverage")
