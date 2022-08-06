@@ -20,18 +20,19 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     group = packer_group,
 })
 
-use {
-    'norcalli/nvim-colorizer.lua',
-
-    config = function()
-        require('colorizer').setup()
-    end,
-}
+use 'morhetz/gruvbox'
+vim.cmd [[ 
+    set termguicolors
+    colorscheme gruvbox
+]]
 
 require("config.edit")
+require("config.git")
 require("config.tmux")
+require("config.search")
 require("config.explorer")
 require("config.cmp")
 require("config.lualine")
 require("config.lsp")
 require("config.go")
+require("config.lang")

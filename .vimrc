@@ -1,16 +1,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin setup
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible
-call plug#begin('~/.vim/plugged')
-so $HOME/.vim/config/plugins.vim
-call plug#end()
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <F7> :e $MYVIMRC<CR>
 noremap <F8> :source $MYVIMRC<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Python support
@@ -18,26 +11,25 @@ noremap <F8> :source $MYVIMRC<CR>
 let g:python_host_prog = $PYENV_ROOT."/versions/neovim/bin/python"
 let g:python3_host_prog = $PYENV_ROOT."/versions/neovim/bin/python3"
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set bg=dark
-set termguicolors
 set colorcolumn=80
 set number              " show line numbers
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
 set showmatch           " highlight matching [{()}]
 set scrolloff=7		" keep some lines visible when moving cursor
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
 set ttyfast
 set lazyredraw
 set synmaxcol=256
 set guicursor=i:ver25	" turn cursor to vertical line in insert mode
 set signcolumn=yes " alwasy show sign column
 
-colorscheme gruvbox
+syntax on
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Wild menu
@@ -64,6 +56,7 @@ nnoremap <F10> :nohlsearch<CR>
 " center the cursor when moving between search results
 nnoremap n nzzzv
 nnoremap N Nzzzv
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Basic key map
@@ -145,6 +138,7 @@ nmap = :bnext<CR>
 " Alt-l to swtich to last used buffer
 map ¬ :b#<CR>
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Copy and Paste
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -173,6 +167,6 @@ vnoremap < <gv
 
 set autowriteall
 
-so $HOME/.vim/config/plugins-config.vim
-
-luafile $HOME/.vim/lua/init.lua
+if has("nvim")
+	luafile $HOME/.vim/lua/init.lua
+endif
