@@ -37,9 +37,6 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 " Markdown
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
-" Golang
-Plug 'fatih/vim-go', { 'for': ['go', 'gomod'] }
-
 " JavaScript
 Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }

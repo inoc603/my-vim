@@ -4,7 +4,7 @@ so $HOME/.vim/config/airline.vim
 so $HOME/.vim/config/tmux.vim
 so $HOME/.vim/config/multiple-cursor.vim
 so $HOME/.vim/config/markdown.vim
-so $HOME/.vim/config/go.vim
+" so $HOME/.vim/config/go.vim
 so $HOME/.vim/config/js.vim
 so $HOME/.vim/config/clang.vim
 so $HOME/.vim/config/tig.vim

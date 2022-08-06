@@ -30,6 +30,7 @@ use {
 
 require("config.explorer")
 require("config.cmp")
-require("config.lsp")
 require("config.lualine")
+require("config.lsp")
+require("config.go")
 require("config.coverage")
