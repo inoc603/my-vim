@@ -59,7 +59,7 @@ set ignorecase
 set smartcase
 
 " Cancel highlight when you're done seraching
-nnoremap <leader>H :nohlsearch<CR>
+nnoremap <F10> :nohlsearch<CR>
 
 " center the cursor when moving between search results
 nnoremap n nzzzv
