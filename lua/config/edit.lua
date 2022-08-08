@@ -23,17 +23,17 @@ use 'tpope/vim-surround'
 use {
     'numToStr/Comment.nvim',
     config = function()
-        require('Comment').setup {
-            ---LHS of toggle mappings in NORMAL + VISUAL mode
-            toggler = {
-                line = '<leader>n',
-                block = 'gbc',
-            },
+        require('Comment').setup({
+            mappings = false,
+        })
 
-            mappings = {
-                extra = false,
-            },
-        }
+        -- <leader>n to toggle comments for the current line in normal mode
+        vim.keymap.set("n", "<leader>n", function()
+            require("Comment.api").toggle_current_linewise()
+        end)
+
+        -- <leader>n to toggle comments for the selected lines in visual mode
+        vim.keymap.set('x', '<leader>n', '<Plug>(comment_toggle_linewise_visual)')
     end
 }
 
