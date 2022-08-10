@@ -4,6 +4,7 @@ vim.g.go_highlight_build_constraints = 1
 vim.g.go_highlight_functions = 1
 vim.g.go_highlight_function_calls = 1
 vim.g.go_highlight_methods = 1
+vim.g.go_def_mapping_enabled = 0
 
 use {
     'fatih/vim-go',
