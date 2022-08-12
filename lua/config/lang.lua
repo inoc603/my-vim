@@ -3,7 +3,9 @@ local use = require("packer").use
 
 use { 'elzr/vim-json', ft = 'json' }
 
-use { 'plasticboy/vim-markdown', ft = 'markdown' }
+vim.g.vim_markdown_folding_disabled = 1
+
+use { 'plasticboy/vim-markdown', requires = {'godlygeek/tabular'}, ft = 'markdown' }
 
 use { 'rust-lang/rust.vim', ft = 'rust' }
 
