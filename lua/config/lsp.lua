@@ -89,7 +89,10 @@ use {
                         version = 'LuaJIT',
                     },
                     diagnostics = {
-                        globals = { 'vim' },
+                        globals = {
+                            'vim', -- neovim
+                            'hs' -- hammerspoon
+                        },
                     },
                     workspace = {
                         -- Make the server aware of Neovim runtime files
@@ -122,6 +125,8 @@ use {
                 },
             },
         })
+
+        setup("volar", {})
     end
 }
 

@@ -29,7 +29,7 @@ use {
 
         -- <leader>n to toggle comments for the current line in normal mode
         vim.keymap.set("n", "<leader>n", function()
-            require("Comment.api").toggle_current_linewise()
+            require("Comment.api").toggle.linewise.current()
         end)
 
         -- <leader>n to toggle comments for the selected lines in visual mode
