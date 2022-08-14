@@ -5,6 +5,12 @@ use {
     config = function()
         local gruvbox = require 'lualine.themes.gruvbox'
 
+        -- set the backgroud color of the buffer line and status line in insert
+        -- and command mode to the same color as normal mode so they don't flash
+        -- that much when switching mode and saving files.
+        gruvbox.insert.c.bg = gruvbox.normal.c.bg
+        gruvbox.command.c.bg = gruvbox.normal.c.bg
+
         require('lualine').setup({
             options = {
                 icons_enabled = false,

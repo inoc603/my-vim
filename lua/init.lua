@@ -12,8 +12,13 @@ use 'wbthomason/packer.nvim'
 local packer_group = vim.api.nvim_create_augroup("packer_user_config", { clear = true })
 
 -- automatically run PackerCompile when configuration changes
+-- FIXME: The following code actually does not work at all. Because I config
+-- every package with the config option of packer.nvim, which only run once
+-- when the package is loaded, even if I reload my config module, the config
+-- function will not be reloaded or re-run. For now we'll just restart nvim
+-- every time and run PackerCompile to see the changes tak effect.
 vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = "{lua/config/*.lua,lua/init.lua}",
+    pattern = "{lua/config/*.lua}",
     callback = function()
         packer.compile()
     end,
