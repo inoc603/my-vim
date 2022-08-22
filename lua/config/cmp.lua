@@ -3,13 +3,14 @@ local use = require("packer").use
 use {
     'hrsh7th/nvim-cmp',
     requires = {
-        'hrsh7th/cmp-vsnip',
-        'hrsh7th/vim-vsnip',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-nvim-lsp-signature-help',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
+
+        'SirVer/ultisnips',
+        'quangnguyen30192/cmp-nvim-ultisnips',
     },
     config = function()
         local cmp = require('cmp')
@@ -19,10 +20,12 @@ use {
             return
         end
 
+        local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
+
         cmp.setup({
             snippet = {
                 expand = function(args)
-                    vim.fn["vsnip#anonymous"](args.body)
+                    vim.fn["UltiSnips#Anon"](args.body)
                 end,
             },
             window = {
@@ -35,12 +38,24 @@ use {
                 ['<C-Space>'] = cmp.mapping.complete(),
                 ['<C-e>'] = cmp.mapping.abort(),
                 ['<CR>'] = cmp.mapping.confirm({ select = true }),
-                ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
-                ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' })
+                ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
+                ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
+                ["<Tab>"] = cmp.mapping(
+                    function(fallback)
+                        cmp_ultisnips_mappings.compose { "select_next_item", "jump_forwards" } (fallback)
+                    end,
+                    { "i", "s" }
+                ),
+                ["<S-Tab>"] = cmp.mapping(
+                    function(fallback)
+                        cmp_ultisnips_mappings.compose { "select_prev_item", "jump_backwards" } (fallback)
+                    end,
+                    { "i", "s" }
+                ),
             }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
-                { name = 'vsnip' },
+                { name = 'ultisnips' },
                 { name = 'nvim_lsp_signature_help' },
             }, {
                 { name = 'buffer' },

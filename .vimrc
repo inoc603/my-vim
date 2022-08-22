@@ -1,7 +1,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" open vimrc
 noremap <F7> :e $MYVIMRC<CR>
+" source vimrc
 noremap <F8> :source $MYVIMRC<CR>
 
 
@@ -15,18 +17,16 @@ let g:python3_host_prog = $PYENV_ROOT."/versions/neovim/bin/python3"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set bg=dark
-set colorcolumn=80
-set number              " show line numbers
-set showcmd             " show command in bottom bar
-set cursorline          " highlight current line
-set showmatch           " highlight matching [{()}]
-set scrolloff=7		" keep some lines visible when moving cursor
-set ttyfast
-set lazyredraw
-set synmaxcol=256
-set guicursor=i:ver25	" turn cursor to vertical line in insert mode
-set signcolumn=yes " alwasy show sign column
+set bg=dark           " prefer dark themes
+set colorcolumn=80    " add a line length guard at the 80th column
+set number            " show line numbers
+set showcmd           " show command in bottom bar
+set cursorline        " highlight current line
+set showmatch         " highlight matching [{()}]
+set scrolloff=7       " keep some lines visible when moving cursor
+set synmaxcol=512     " prevent slow rendering on large files with syntax highlighting
+set guicursor=i:ver25 " turn cursor to vertical line in insert mode
+set signcolumn=yes    " alwasy show sign column
 
 syntax on
 
@@ -78,13 +78,13 @@ inoremap kj <Esc>
 " Files and session
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quick save
-nmap <leader>w :w<CR>			
+nmap <silent><leader>w :w<CR>
 " Close current window
 nmap <leader>q :q<CR>
 " Close all windows
 nmap <leader>Q :qall<CR>
 " Save session
-nmap <leader>s :mksession<CR>		
+nmap <leader>s :mksession<CR>
 set nobackup
 set nowb
 set noswapfile
@@ -174,6 +174,11 @@ vnoremap < <gv
 
 set autowriteall
 
+" remove tailing whitespaces
+nnoremap <F2> :%s/\s\+$//e<CR>
+
 if has("nvim")
 	luafile $HOME/.vim/lua/init.lua
+	set jumpoptions=stack
 endif
+
