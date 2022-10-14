@@ -8,10 +8,18 @@ use {
 }
 
 use {
+    'simrat39/symbols-outline.nvim',
+    config = function()
+        require("symbols-outline").setup()
+    end
+}
+
+use {
     'neovim/nvim-lspconfig',
     requires = {
         'hrsh7th/cmp-nvim-lsp',
-        "folke/trouble.nvim",
+        'folke/trouble.nvim',
+        'simrat39/symbols-outline.nvim',
     },
     config = function()
         local trouble = require("trouble")
