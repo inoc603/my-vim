@@ -28,6 +28,9 @@ use {
                     vim.fn["UltiSnips#Anon"](args.body)
                 end,
             },
+            completion = {
+                completeopt = "menuone,noinsert,noselect",
+            },
             window = {
                 -- completion = cmp.config.window.bordered(),
                 -- documentation = cmp.config.window.bordered(),
@@ -36,6 +39,7 @@ use {
                 ['<C-b>'] = cmp.mapping.scroll_docs(-4),
                 ['<C-f>'] = cmp.mapping.scroll_docs(4),
                 ['<C-Space>'] = cmp.mapping.complete(),
+                ['<C-y>'] = cmp.mapping.complete(),
                 ['<C-e>'] = cmp.mapping.abort(),
                 ['<CR>'] = cmp.mapping.confirm({ select = true }),
                 ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),

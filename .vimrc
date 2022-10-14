@@ -8,17 +8,10 @@ noremap <F8> :source $MYVIMRC<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Python support
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:python_host_prog = $PYENV_ROOT."/versions/neovim/bin/python"
-let g:python3_host_prog = $PYENV_ROOT."/versions/neovim/bin/python3"
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set bg=dark           " prefer dark themes
-set colorcolumn=80    " add a line length guard at the 80th column
+set colorcolumn=100   " add a line length guard at the 100th column
 set number            " show line numbers
 set showcmd           " show command in bottom bar
 set cursorline        " highlight current line
@@ -78,7 +71,7 @@ inoremap kj <Esc>
 " Files and session
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quick save
-nmap <silent><leader>w :w<CR>
+nnoremap <leader>w :w<CR>
 " Close current window
 nmap <leader>q :q<CR>
 " Close all windows
@@ -180,5 +173,6 @@ nnoremap <F2> :%s/\s\+$//e<CR>
 if has("nvim")
 	luafile $HOME/.vim/lua/init.lua
 	set jumpoptions=stack
+	set cmdheight=0
 endif
 

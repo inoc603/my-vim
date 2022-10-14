@@ -127,6 +127,8 @@ use {
         })
 
         setup("volar", {})
+
+        setup("pyright", {})
     end
 }
 
