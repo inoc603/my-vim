@@ -1,5 +1,6 @@
 local use = require("packer").use
 
+
 use {
     "folke/trouble.nvim",
     config = function()
@@ -11,6 +12,17 @@ use {
     'simrat39/symbols-outline.nvim',
     config = function()
         require("symbols-outline").setup()
+    end
+}
+
+use {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+        require("null-ls").setup({
+            sources = {
+                require("null-ls").builtins.formatting.black,
+            },
+        })
     end
 }
 
@@ -30,7 +42,7 @@ use {
             local opts = { buffer = bufnr }
 
             -- format the file
-            vim.keymap.set("n", '<leader>f', vim.lsp.buf.formatting, opts)
+            vim.keymap.set("n", '<leader>f', function() vim.lsp.buf.format { timeout_ms = 5000 } end, opts)
             -- open floating window at cursor
             vim.keymap.set("n", '<leader>e', vim.diagnostic.open_float, opts)
             -- go to the next diagnostic
@@ -68,7 +80,7 @@ use {
 
         local lsp = require('lspconfig')
 
-        local capabilities = require('cmp_nvim_lsp').update_capabilities(
+        local capabilities = require('cmp_nvim_lsp').default_capabilities(
             vim.lsp.protocol.make_client_capabilities()
         )
 
@@ -136,7 +148,34 @@ use {
 
         setup("volar", {})
 
-        setup("pyright", {})
+        local path = require('lspconfig/util').path
+
+        local function get_python_path(workspace)
+            -- Use activated virtualenv.
+            if vim.env.VIRTUAL_ENV then
+                return path.join(vim.env.VIRTUAL_ENV, 'bin', 'python')
+            end
+
+            -- Use the python from venv configured in pyrightconfig.json
+            if vim.fn.filereadable(path.join(workspace, "pyrightconfig.json")) then
+                local conf = vim.fn.json_decode(vim.fn.readfile(path.join(workspace, "pyrightconfig.json")))
+                local python_from_pyrightconfig_json = path.join(workspace, conf["venvPath"], conf["venv"], "bin/python")
+                if vim.fn.executable(python_from_pyrightconfig_json) then
+                    return python_from_pyrightconfig_json
+                end
+            end
+
+            return ""
+        end
+
+        setup("pyright", {
+            before_init = function(_, config)
+                local python_path = get_python_path(config.root_dir)
+                if python_path ~= '' then
+                    config.settings.python.pythonPath = python_path
+                end
+            end
+        })
     end
 }
 
