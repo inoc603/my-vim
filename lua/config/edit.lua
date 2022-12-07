@@ -14,7 +14,12 @@ use 'nathanaelkane/vim-indent-guides'
 use 'jiangmiao/auto-pairs'
 
 -- Makes moving aroung easier
-use 'easymotion/vim-easymotion'
+use {
+    'easymotion/vim-easymotion',
+    config = function()
+        vim.g.EasyMotion_verbose = 0
+    end,
+}
 
 -- Edit surrounds with ease
 use 'tpope/vim-surround'

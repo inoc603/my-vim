@@ -41,7 +41,7 @@ use {
                 ['<C-Space>'] = cmp.mapping.complete(),
                 ['<C-y>'] = cmp.mapping.complete(),
                 ['<C-e>'] = cmp.mapping.abort(),
-                ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true }),
                 ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
                 ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
                 ["<Tab>"] = cmp.mapping(

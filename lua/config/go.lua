@@ -7,6 +7,7 @@ vim.g.go_highlight_function_calls = 1
 vim.g.go_highlight_methods = 1
 vim.g.go_def_mapping_enabled = 0
 vim.g.go_fmt_autosave = 1
+vim.g.go_echo_command_info = 0
 
 use {
     'fatih/vim-go',
