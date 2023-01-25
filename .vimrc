@@ -171,6 +171,7 @@ set autowriteall
 nnoremap <F2> :%s/\s\+$//e<CR>
 
 if has("nvim")
+        set termguicolors
 	luafile $HOME/.vim/lua/init.lua
 	set jumpoptions=stack
 	set cmdheight=0

@@ -1,24 +1,22 @@
-local use = require("packer").use
+return require("config.module").export(function(use)
+    use { 'elzr/vim-json', ft = 'json' }
 
+    vim.g.vim_markdown_folding_disabled = 1
+    use { 'plasticboy/vim-markdown', requires = { 'godlygeek/tabular' }, ft = 'markdown' }
 
-use { 'elzr/vim-json', ft = 'json' }
+    use { 'rust-lang/rust.vim', ft = 'rust' }
 
-vim.g.vim_markdown_folding_disabled = 1
+    use { 'cespare/vim-toml', ft = 'toml' }
 
-use { 'plasticboy/vim-markdown', requires = {'godlygeek/tabular'}, ft = 'markdown' }
+    use { 'solarnz/thrift.vim', ft = 'thrift' }
 
-use { 'rust-lang/rust.vim', ft = 'rust' }
+    use { 'jparise/vim-graphql', ft = 'graphql' }
 
-use { 'cespare/vim-toml', ft = 'toml' }
+    use { 'andys8/vim-elm-syntax', ft = "elm" }
 
-use { 'solarnz/thrift.vim', ft = 'thrift' }
-
-use { 'jparise/vim-graphql', ft = 'graphql' }
-
-use { 'andys8/vim-elm-syntax', ft = "elm" }
-
--- JavaScript
-use { 'posva/vim-vue', ft = 'vue' }
-use { 'digitaltoad/vim-pug', ft = 'pug' }
-use { 'leafgarland/typescript-vim', ft = "typescript" }
-use { 'ianks/vim-tsx', ft = "typescript" }
+    -- JavaScript
+    use { 'posva/vim-vue', ft = 'vue' }
+    use { 'digitaltoad/vim-pug', ft = 'pug' }
+    use { 'leafgarland/typescript-vim', ft = "typescript" }
+    use { 'ianks/vim-tsx', ft = "typescript" }
+end)
