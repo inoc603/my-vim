@@ -1,5 +1,5 @@
-return require("config.module").export(function(use)
-    use {
+return {
+    {
         'nvim-treesitter/nvim-treesitter',
         run = function()
             require('nvim-treesitter.install').update({ with_sync = true })
@@ -34,4 +34,4 @@ return require("config.module").export(function(use)
             }
         end,
     }
-end)
+}

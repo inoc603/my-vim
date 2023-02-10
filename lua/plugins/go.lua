@@ -1,22 +1,23 @@
-return require("config.module").export(function(use)
-    vim.g.go_highlight_build_constraints = 1
-    vim.g.go_highlight_generate_tags     = 1
-    vim.g.go_highlight_functions         = 1
-    vim.g.go_highlight_function_calls    = 1
-    vim.g.go_highlight_methods           = 1
-    vim.g.go_def_mapping_enabled         = 0
-    vim.g.go_fmt_autosave                = 1
-    vim.g.go_echo_command_info           = 0
-
-    use {
+return {
+    {
         'fatih/vim-go',
         ft = { 'go', 'gomod' },
-    }
+        init = function()
+            vim.g.go_highlight_build_constraints = 1
+            vim.g.go_highlight_generate_tags     = 1
+            vim.g.go_highlight_functions         = 1
+            vim.g.go_highlight_function_calls    = 1
+            vim.g.go_highlight_methods           = 1
+            vim.g.go_def_mapping_enabled         = 0
+            vim.g.go_fmt_autosave                = 1
+            vim.g.go_echo_command_info           = 0
+        end
+    },
 
     -- visual code coverage
-    use {
+    {
         'andythigpen/nvim-coverage',
-        requires = {
+        dependencies = {
             'nvim-lua/plenary.nvim'
         },
         config = function()
@@ -38,4 +39,4 @@ return require("config.module").export(function(use)
             -- vim.api.nvim_set_keymap('n', '<leader><leader>s', ':CoverageSummary<CR>', { noremap = true })
         end
     }
-end)
+}

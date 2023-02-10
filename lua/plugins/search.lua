@@ -1,15 +1,11 @@
-return require("config.module").export(function(use)
-    vim.g.fzf_layout = { window = { height = 0.8, width = 0.8 } }
-
-    vim.cmd [[ let $FZF_DEFAULT_OPTS = '--reverse' ]]
-
+return {
     -- Fuzzy finder
-    use {
+    {
         'junegunn/fzf.vim',
-        requires = {
-            'junegunn/fzf',
-        },
+        dependencies = { 'junegunn/fzf' },
         config = function()
+            vim.g.fzf_layout = { window = { height = 0.8, width = 0.8 } }
+            vim.cmd [[ let $FZF_DEFAULT_OPTS = '--reverse' ]]
             local n = function(l, r)
                 vim.keymap.set("n", l, r, { silent = true })
             end
@@ -19,8 +15,8 @@ return require("config.module").export(function(use)
             n("<Leader>a", ":Ag<CR>")
             n("<Leader>rp", [[:execute "Ag" expand("<cword>")<CR>]])
         end
-    }
+    },
 
-    use 'mileszs/ack.vim' -- Search in project
-    use 'tpope/vim-abolish' -- Search and replace
-end)
+    'mileszs/ack.vim', -- Search in project
+    'tpope/vim-abolish', -- Search and replace
+}

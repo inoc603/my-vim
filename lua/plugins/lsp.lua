@@ -1,27 +1,27 @@
-return require("config.module").export(function(use)
-    use {
+return {
+    {
         "williamboman/mason.nvim",
         config = function()
             require("mason").setup()
         end
-    }
+    },
 
 
-    use {
+    {
         "folke/trouble.nvim",
         config = function()
             require("trouble").setup {}
         end
-    }
+    },
 
-    use {
+    {
         'simrat39/symbols-outline.nvim',
         config = function()
             require("symbols-outline").setup()
         end
-    }
+    },
 
-    use {
+    {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
             local null_ls = require("null-ls")
@@ -31,11 +31,11 @@ return require("config.module").export(function(use)
                 },
             })
         end
-    }
+    },
 
-    use {
+    {
         'neovim/nvim-lspconfig',
-        requires = {
+        dependencies = {
             'hrsh7th/cmp-nvim-lsp',
             'folke/trouble.nvim',
             'simrat39/symbols-outline.nvim',
@@ -186,9 +186,9 @@ return require("config.module").export(function(use)
                 end
             })
         end
-    }
+    },
 
-    use {
+    {
         'stevearc/dressing.nvim',
         config = function()
             require('dressing').setup {
@@ -199,5 +199,5 @@ return require("config.module").export(function(use)
                 }
             }
         end
-    }
-end)
+    },
+}

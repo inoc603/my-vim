@@ -1,8 +1,7 @@
-return require("config.module").export(function(use)
-
-    use {
+return {
+    {
         'hrsh7th/nvim-cmp',
-        requires = {
+        dependencies = {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-nvim-lsp-signature-help',
             'hrsh7th/cmp-buffer',
@@ -95,4 +94,4 @@ return require("config.module").export(function(use)
         end
     }
 
-end)
+}

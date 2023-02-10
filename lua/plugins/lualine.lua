@@ -1,6 +1,5 @@
-return require("config.module").export(function(use)
-
-    use {
+return {
+    {
         'nvim-lualine/lualine.nvim',
         config = function()
             local gruvbox = require 'lualine.themes.gruvbox'
@@ -53,4 +52,4 @@ return require("config.module").export(function(use)
             })
         end
     }
-end)
+}

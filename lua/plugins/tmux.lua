@@ -1,10 +1,11 @@
-return require("config.module").export(function(use)
-    vim.g.tmux_navigator_no_mappings = 1
-    vim.g.tmux_navigator_save_on_switch = 0
-
-    use {
+return {
+    {
         -- Seamless navigation in vim and tmux panel
         'christoomey/vim-tmux-navigator',
+        init = function()
+            vim.g.tmux_navigator_no_mappings = 1
+            vim.g.tmux_navigator_save_on_switch = 0
+        end,
         config = function()
             local n = function(l, r)
                 vim.keymap.set("n", l, r, { silent = true })
@@ -16,4 +17,4 @@ return require("config.module").export(function(use)
             n("<C-l>", ":TmuxNavigateRight<cr>")
         end
     }
-end)
+}

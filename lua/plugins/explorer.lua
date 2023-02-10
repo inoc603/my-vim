@@ -1,7 +1,7 @@
-return require("config.module").export(function(use)
-    use {
+return {
+    {
         'kyazdani42/nvim-tree.lua',
-        requires = { 'kyazdani42/nvim-web-devicons' },
+        dependencies = { 'kyazdani42/nvim-web-devicons' },
         config = function()
             require("nvim-tree").setup {
                 filters = {
@@ -28,9 +28,9 @@ return require("config.module").export(function(use)
             local nnoremap = keymap("n", { noremap = true, silent = true })
             nnoremap("<c-\\>", require("nvim-tree.api").tree.toggle)
         end
-    }
+    },
 
-    use {
+    {
         'kazhala/close-buffers.nvim',
         config = function()
             local close_buffers = require("close_buffers")
@@ -42,4 +42,4 @@ return require("config.module").export(function(use)
             end, { force = true })
         end
     }
-end)
+}

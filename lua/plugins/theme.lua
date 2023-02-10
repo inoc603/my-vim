@@ -1,5 +1,5 @@
-return require("config.module").export(function(use)
-    use {
+return {
+    {
         "morhetz/gruvbox",
         config = function()
             vim.cmd [[ 
@@ -8,4 +8,4 @@ return require("config.module").export(function(use)
             ]]
         end
     }
-end)
+}
