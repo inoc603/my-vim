@@ -12,12 +12,12 @@ return require("config.module").export(function(use)
     -- Auto pairs parenthesis
     use 'jiangmiao/auto-pairs'
 
-    -- Makes moving aroung easier
     use {
-        'easymotion/vim-easymotion',
+        'ggandor/leap.nvim',
         config = function()
-            vim.g.EasyMotion_verbose = 0
-        end,
+            vim.keymap.set({ "n" }, "<leader>s", "<Plug>(leap-forward-to)")
+            vim.keymap.set({ "n" }, "<leader><leader>s", "<Plug>(leap-backward-to)")
+        end
     }
 
     -- Edit surrounds with ease

@@ -75,9 +75,7 @@ nnoremap <leader>w :w<CR>
 " Close current window
 nmap <leader>q :q<CR>
 " Close all windows
-nmap <leader>Q :qall<CR>
-" Save session
-nmap <leader>s :mksession<CR>
+nmap <leader><leader>q :qall<CR>
 set nobackup
 set nowb
 set noswapfile

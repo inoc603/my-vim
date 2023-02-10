@@ -35,7 +35,7 @@ return require("config.module").export(function(use)
 
             vim.api.nvim_set_keymap('n', '<leader>c', ':Coverage<CR>', { noremap = true })
             vim.api.nvim_set_keymap('n', '<leader><leader>c', ':CoverageHide<CR>', { noremap = true })
-            vim.api.nvim_set_keymap('n', '<leader><leader>s', ':CoverageSummary<CR>', { noremap = true })
+            -- vim.api.nvim_set_keymap('n', '<leader><leader>s', ':CoverageSummary<CR>', { noremap = true })
         end
     }
 end)
