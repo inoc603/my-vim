@@ -66,6 +66,9 @@ noremap <right> <nop>
 " Use kj to switch to normal mode
 inoremap kj <Esc>
 
+" A terrible place to be.
+nnoremap Q <nop>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files and session

@@ -9,15 +9,10 @@ function M.export(f)
                 return
             end
 
-            local config = args.config
-
-            if args ~= nil then
-                args["config"] = nil
-            end
-
             use(args)
 
             -- force the excution of the config function
+            local config = args.config
             if config ~= nil then
                 config()
             end
