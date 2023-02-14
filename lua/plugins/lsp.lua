@@ -88,8 +88,8 @@ return {
             local lsp = require('lspconfig')
 
             local capabilities = require('cmp_nvim_lsp').default_capabilities(
-                vim.lsp.protocol.make_client_capabilities()
-            )
+                    vim.lsp.protocol.make_client_capabilities()
+                )
 
             local function setup(server, server_opts)
                 server_opts.on_attach = on_attach
@@ -168,7 +168,7 @@ return {
                 if vim.fn.filereadable(path.join(workspace, "pyrightconfig.json")) then
                     local conf = vim.fn.json_decode(vim.fn.readfile(path.join(workspace, "pyrightconfig.json")))
                     local python_from_pyrightconfig_json = path.join(workspace, conf["venvPath"], conf["venv"],
-                        "bin/python")
+                            "bin/python")
                     if vim.fn.executable(python_from_pyrightconfig_json) then
                         return python_from_pyrightconfig_json
                     end

@@ -1,5 +1,5 @@
 return {
-    { 'elzr/vim-json', ft = 'json' },
+    { 'elzr/vim-json',              ft = 'json' },
 
     {
         'plasticboy/vim-markdown',
@@ -10,19 +10,19 @@ return {
         end,
     },
 
-    { 'rust-lang/rust.vim', ft = 'rust' },
+    { 'rust-lang/rust.vim',         ft = 'rust' },
 
-    { 'cespare/vim-toml', ft = 'toml' },
+    { 'cespare/vim-toml',           ft = 'toml' },
 
-    { 'solarnz/thrift.vim', ft = 'thrift' },
+    { 'solarnz/thrift.vim',         ft = 'thrift' },
 
-    { 'jparise/vim-graphql', ft = 'graphql' },
+    { 'jparise/vim-graphql',        ft = 'graphql' },
 
-    { 'andys8/vim-elm-syntax', ft = "elm" },
+    { 'andys8/vim-elm-syntax',      ft = "elm" },
 
     -- JavaScript
-    { 'posva/vim-vue', ft = 'vue' },
-    { 'digitaltoad/vim-pug', ft = 'pug' },
+    { 'posva/vim-vue',              ft = 'vue' },
+    { 'digitaltoad/vim-pug',        ft = 'pug' },
     { 'leafgarland/typescript-vim', ft = "typescript" },
-    { 'ianks/vim-tsx', ft = "typescript" },
+    { 'ianks/vim-tsx',              ft = "typescript" },
 }

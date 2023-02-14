@@ -35,7 +35,7 @@ return {
                     -- documentation = cmp.config.window.bordered(),
                 },
                 mapping = cmp.mapping.preset.insert({
-                    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                    ['<C-b>'] = cmp.mapping.scroll_docs( -4),
                     ['<C-f>'] = cmp.mapping.scroll_docs(4),
                     ['<C-Space>'] = cmp.mapping.complete(),
                     ['<C-y>'] = cmp.mapping.complete(),
@@ -45,13 +45,13 @@ return {
                     ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
                     ["<Tab>"] = cmp.mapping(
                         function(fallback)
-                            cmp_ultisnips_mappings.compose { "select_next_item", "jump_forwards" } (fallback)
+                            cmp_ultisnips_mappings.compose { "select_next_item", "jump_forwards" }(fallback)
                         end,
                         { "i", "s" }
                     ),
                     ["<S-Tab>"] = cmp.mapping(
                         function(fallback)
-                            cmp_ultisnips_mappings.compose { "select_prev_item", "jump_backwards" } (fallback)
+                            cmp_ultisnips_mappings.compose { "select_prev_item", "jump_backwards" }(fallback)
                         end,
                         { "i", "s" }
                     ),

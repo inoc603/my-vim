@@ -2,7 +2,7 @@ return {
     {
         "morhetz/gruvbox",
         config = function()
-            vim.cmd [[ 
+            vim.cmd [[
                 set termguicolors
                 colorscheme gruvbox
             ]]
