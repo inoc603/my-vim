@@ -110,7 +110,7 @@ return {
                 }
             })
 
-            setup("sumneko_lua", {
+            setup("lua_ls", {
                 settings = {
                     Lua = {
                         runtime = {

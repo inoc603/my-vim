@@ -32,11 +32,6 @@ return {
                     covered = { hl = "CoverageCovered", text = "▎" },
                     uncovered = { hl = "CoverageUncovered", text = "▎" },
                 },
-                lang = {
-                    go = {
-                        coverage_file = "coverage.out"
-                    }
-                },
             })
 
             vim.api.nvim_set_keymap('n', '<leader>c', ':Coverage<CR>', { noremap = true })
