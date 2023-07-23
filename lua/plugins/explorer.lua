@@ -17,6 +17,19 @@ return {
                         },
                     }
                 },
+                view = {
+                    float = {
+                        enable = true,
+                        open_win_config = {
+                            relative = "editor",
+                            border = "rounded",
+                            width = 30,
+                            height = 30,
+                            row = 0.5,
+                            col = 0.5,
+                        }
+                    }
+                }
             }
 
             local function keymap(mode, opts)

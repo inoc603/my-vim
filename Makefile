@@ -23,8 +23,8 @@ install:
 	$(call link,$(CURDIR),~/.vim)
 	$(call link,~/.vim/.vimrc,~/.vimrc)
 	mkdir -p ~/.config
-	$(call link,~/.vim,~/.config/nvim)
-	$(call link,~/.vim/.vimrc,~/.vim/init.vim)
+	$(call link,$(CURDIR),~/.config/nvim)
+	$(call link,$(CURDIR)/.vimrc,~/.vim/init.vim)
 
 python:
 	pyenv virtualenv 3.7.4 neovim && \

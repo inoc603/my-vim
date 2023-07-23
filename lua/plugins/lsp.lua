@@ -21,22 +21,11 @@ return {
         end
     },
 
-    {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-            local null_ls = require("null-ls")
-            null_ls.setup({
-                sources = {
-                    null_ls.builtins.formatting.black,
-                    null_ls.builtins.formatting.prettier,
-                },
-            })
-        end
-    },
 
     {
         'neovim/nvim-lspconfig',
         dependencies = {
+            "jose-elias-alvarez/null-ls.nvim",
             'hrsh7th/cmp-nvim-lsp',
             'folke/trouble.nvim',
             'simrat39/symbols-outline.nvim',
@@ -47,6 +36,13 @@ return {
             -- Use an on_attach function to only map the following keys
             -- after the language server attaches to the current buffer
             local on_attach = function(_, bufnr)
+                vim.api.nvim_create_autocmd("BufWritePre", {
+                    buffer = bufnr,
+                    callback = function()
+                        vim.lsp.buf.format { async = false }
+                    end
+                })
+
                 local opts = { buffer = bufnr }
 
                 -- format the file
@@ -57,8 +53,8 @@ return {
                 vim.keymap.set("n", '<leader>k', vim.diagnostic.goto_next, opts)
                 -- go to the previous diagnostic
                 vim.keymap.set("n", '<leader>j', vim.diagnostic.goto_prev, opts)
-                -- go to declaration
-                vim.keymap.set("n", 'gD', vim.lsp.buf.declaration, opts)
+                -- go to type definition
+                vim.keymap.set("n", 'gD', vim.lsp.buf.type_definition, opts)
                 -- go to definition
                 vim.keymap.set("n", 'gd', vim.lsp.buf.definition, opts)
                 -- show document for object at the current position
@@ -68,7 +64,6 @@ return {
                 -- bring up code actions for the current position
                 vim.keymap.set("n", '<leader>ca', vim.lsp.buf.code_action, opts)
 
-                vim.keymap.set("n", '<leader>D', vim.lsp.buf.type_definition, opts)
 
                 local open = function(mode)
                     return function()
@@ -82,6 +77,7 @@ return {
                 vim.keymap.set("n", 'gi', open("lsp_implementations"), opts)
                 -- show all diagnostics
                 vim.keymap.set("n", '<leader>d', open("document_diagnostics"), opts)
+                vim.keymap.set("n", '<leader>D', open("workspace_diagnostics"), opts)
                 -- close the trouble window
                 vim.keymap.set("n", '<leader><leader>d', trouble.close, opts)
             end
@@ -89,8 +85,8 @@ return {
             local lsp = require('lspconfig')
 
             local capabilities = require('cmp_nvim_lsp').default_capabilities(
-                    vim.lsp.protocol.make_client_capabilities()
-                )
+                vim.lsp.protocol.make_client_capabilities()
+            )
 
             local function setup(server, server_opts)
                 server_opts.on_attach = on_attach
@@ -98,9 +94,28 @@ return {
                     -- this is the default in Nvim 0.7+
                     debounce_text_changes = 150,
                 }
-                server_opts.capabilities = capabilities
+                if not server_opts.capabilities then
+                    server_opts.capabilities = capabilities
+                end
                 lsp[server].setup(server_opts)
             end
+
+            local null_ls = require("null-ls")
+            null_ls.setup({
+                sources = {
+                    null_ls.builtins.formatting.black,
+                    null_ls.builtins.formatting.prettier,
+                    null_ls.builtins.diagnostics.buf,
+                    null_ls.builtins.formatting.buf,
+                    null_ls.builtins.formatting.sqlfluff.with({
+                        extra_args = { "--dialect", "mysql" }, -- change to your dialect
+                    }),
+                    null_ls.builtins.diagnostics.sqlfluff.with({
+                        extra_args = { "--dialect", "mysql" }, -- change to your dialect
+                    }),
+                },
+                on_attach = on_attach,
+            })
 
             setup("tsserver", {})
 
@@ -119,7 +134,7 @@ return {
                         diagnostics = {
                             globals = {
                                 'vim', -- neovim
-                                'hs' -- hammerspoon
+                                'hs'   -- hammerspoon
                             },
                         },
                         workspace = {
@@ -150,12 +165,15 @@ return {
                             unusedparams = true,
                         },
                         staticcheck = true,
-                        memoryMode = "DegradeClosed"
+                        memoryMode = "DegradeClosed",
+                        gofumpt = true,
                     },
                 },
             })
 
-            setup("volar", {})
+            setup("vuels", {})
+
+            setup("graphql", {})
 
             local path = require('lspconfig/util').path
 
@@ -169,7 +187,7 @@ return {
                 if vim.fn.filereadable(path.join(workspace, "pyrightconfig.json")) then
                     local conf = vim.fn.json_decode(vim.fn.readfile(path.join(workspace, "pyrightconfig.json")))
                     local python_from_pyrightconfig_json = path.join(workspace, conf["venvPath"], conf["venv"],
-                            "bin/python")
+                        "bin/python")
                     if vim.fn.executable(python_from_pyrightconfig_json) then
                         return python_from_pyrightconfig_json
                     end
@@ -186,6 +204,8 @@ return {
                     end
                 end
             })
+
+            setup("bufls", {})
         end
     },
 

@@ -74,11 +74,11 @@ nnoremap Q <nop>
 " Files and session
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quick save
-nnoremap <leader>w :w<CR>
+nnoremap <silent> <leader>w :w<CR>
 " Close current window
-nmap <leader>q :q<CR>
+nmap <silent> <leader>q :q<CR>
 " Close all windows
-nmap <leader><leader>q :qall<CR>
+nmap <silent> <leader><leader>q :qall<CR>
 set nobackup
 set nowb
 set noswapfile
@@ -124,9 +124,9 @@ nmap <leader>v :vsplit<CR>
 set diffopt=vertical
 
 " - to switch to previous buffer(left)
-nmap - :bprevious<CR>
+nmap <silent> - :bprevious<CR>
 " = to switch to next buffer(right)
-nmap = :bnext<CR>
+nmap <silent> = :bnext<CR>
 
 " These only works on iTerm2
 " Alt-l to swtich to last used buffer
@@ -178,3 +178,5 @@ if has("nvim")
 	set cmdheight=0
 endif
 
+" Get the highlight group under cursor
+nnoremap <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>

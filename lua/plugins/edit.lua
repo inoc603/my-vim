@@ -15,13 +15,18 @@ return {
 
     -- Auto pairs parenthesis
     'jiangmiao/auto-pairs',
-
     {
-        'ggandor/leap.nvim',
-        config = function()
-            vim.keymap.set({ "n" }, "<leader>s", "<Plug>(leap-forward-to)")
-            vim.keymap.set({ "n" }, "<leader><leader>s", "<Plug>(leap-backward-to)")
-        end
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        opts = {},
+        keys = {
+            {
+                "<leader>s",
+                mode = { "n", "x", "o" },
+                function() require("flash").jump() end,
+                desc = "Flash",
+            }
+        },
     },
 
     -- Edit surrounds with ease
