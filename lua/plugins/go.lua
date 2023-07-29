@@ -31,6 +31,7 @@ return {
                   " make nil and strings purple as other literal values.
                   highlight! link goPredefinedIdentifiers Purple
                   highlight! link goString Purple
+                  highlight! link goRawString Purple
             ]]
         end
     },
