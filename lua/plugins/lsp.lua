@@ -104,7 +104,7 @@ return {
             null_ls.setup({
                 sources = {
                     null_ls.builtins.formatting.black,
-                    null_ls.builtins.formatting.prettier,
+                    -- null_ls.builtins.formatting.prettier,
                     null_ls.builtins.diagnostics.buf,
                     null_ls.builtins.formatting.buf,
                     null_ls.builtins.formatting.sqlfluff.with({
@@ -171,7 +171,9 @@ return {
                 },
             })
 
-            setup("vuels", {})
+            setup("volar", {
+                filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }
+            })
 
             setup("graphql", {})
 
